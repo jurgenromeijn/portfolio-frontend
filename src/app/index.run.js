@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('frontend')
+    .module('portfolio')
     .run(runBlock);
 
   /** @ngInject */

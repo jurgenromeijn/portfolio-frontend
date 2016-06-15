@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('frontend')
+    .module('portfolio')
     .config(routerConfig);
 
   /** @ngInject */
@@ -10,9 +10,7 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        templateUrl: 'app/main/main.html'
       });
 
     $urlRouterProvider.otherwise('/');
