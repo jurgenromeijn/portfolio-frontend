@@ -1,3 +1,28 @@
+$brand-height: $navbar-height * 0.8;
+
 .navbar-portfolio {
-    font-family: Pixelade;
+    border-bottom: none;
+
+    .navbar-brand {
+        padding: 0;
+
+        .name {
+            display: none;
+        }
+
+        &:after {
+            background-color: $brand-primary;
+            color: $white;
+            content: "[JR]";
+            display: block;
+            font-family: Pixelade;
+            font-size: $brand-height;
+            line-height: $brand-height;
+            padding: (($navbar-height - $brand-height) / 2)
+                    ((($navbar-height - $brand-height) / 2) - 2px)
+                    (($navbar-height - $brand-height) / 2)
+                    ((($navbar-height - $brand-height) / 2) + 1px);
+            text-align: center;
+        }
+    }
 }
