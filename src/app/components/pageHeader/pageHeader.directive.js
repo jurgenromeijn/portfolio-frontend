@@ -6,11 +6,12 @@
     'use strict';
 
     angular
-        .module('portfolio')
+        .module('app.portfolio')
         .directive('pageHeader', pageHeader);
 
     function pageHeader() {
         return {
+            restrict: 'A',
             templateUrl: 'app/components/pageHeader/pageHeader.tpl.html'
         };
     }
