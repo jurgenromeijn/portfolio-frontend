@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('portfolio')
+    .module('app.portfolio')
     .config(routerConfig);
 
   /** @ngInject */

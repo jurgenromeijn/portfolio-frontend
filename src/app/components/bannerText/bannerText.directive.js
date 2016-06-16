@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('portfolio')
+        .module('app.portfolio')
         .directive('bannerText', bannerText);
 
     function bannerText() {

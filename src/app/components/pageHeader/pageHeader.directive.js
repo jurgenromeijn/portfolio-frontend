@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('portfolio')
+        .module('app.portfolio')
         .directive('pageHeader', pageHeader);
 
     function pageHeader() {
