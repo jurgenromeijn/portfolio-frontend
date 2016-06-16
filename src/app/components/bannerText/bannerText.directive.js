@@ -13,6 +13,9 @@
         return {
             restrict: 'A',
             transclude: true,
+            scope: {
+                image: '@'
+            },
             templateUrl: 'app/components/bannerText/bannerText.tpl.html'
         };
     }
