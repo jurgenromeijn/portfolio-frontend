@@ -1,0 +1,20 @@
+.page-footer {
+  background: $gray-lighter;
+  color: $black;
+  font-family: Pixelade;
+  font-size: $font-size-large;
+  padding: $spacing 0 ($spacing - ($line-height-computed / 2));
+
+  .copyright {
+    @media (max-width: $screen-xs-max) {
+      text-align: center;
+    }
+  }
+
+  .social {
+    text-align: right;
+    @media (max-width: $screen-xs-max) {
+      text-align: center;
+    }
+  }
+}
