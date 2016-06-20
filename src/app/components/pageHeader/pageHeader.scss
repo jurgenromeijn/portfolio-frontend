@@ -11,6 +11,7 @@ $brand-height: $navbar-height * 0.8;
         }
 
         &:after {
+            margin-left: $nav-link-spacing-horizontal;
             background-color: $brand-primary;
             color: $white;
             content: "[JR]";
