@@ -31,6 +31,12 @@ $spacing:               30px !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-accent:      "Pixelade", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$headings-font-family:    $font-family-accent !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.25 !default;
+$headings-color:          inherit !default;
 
 //== Iconography
 //

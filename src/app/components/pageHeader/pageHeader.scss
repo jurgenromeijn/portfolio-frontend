@@ -16,7 +16,7 @@ $brand-height: $navbar-height * 0.8;
             color: $white;
             content: "[JR]";
             display: block;
-            font-family: Pixelade;
+            font-family: $font-family-accent;
             font-size: $brand-height;
             line-height: $brand-height;
             padding: (($navbar-height - $brand-height) / 2)
