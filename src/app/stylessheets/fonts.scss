@@ -6,3 +6,15 @@
   url("../../assets/fonts/pixelade/pixelade.ttf") format("truetype"),
   url("../../assets/fonts/pixelade/pixelade.svg#Pixelade") format("svg");
 }
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+
+  &::before {
+    content: "[";
+  }
+
+  &::after {
+    content: "]";
+  }
+}
