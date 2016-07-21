@@ -16,6 +16,10 @@
                 url: '/projecten',
                 templateUrl: 'app/pages/project/overview/project-overview.html'
             })
+            .state('projects-detail', {
+                url: '/{slug}',
+                templateUrl: 'app/pages/project/detail/project-detail.html'
+            });
 
         $urlRouterProvider.otherwise('/');
     }
