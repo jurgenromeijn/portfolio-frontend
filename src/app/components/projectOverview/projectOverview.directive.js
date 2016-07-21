@@ -2,13 +2,15 @@
  * Created on 21/07/16.
  * @author Jurgen Romeijn
  */
-(function () {
+(function (angular) {
     'use strict';
 
     function projectOverview() {
         return {
             restrict: 'A',
-            templateUrl: 'app/components/projectOverview/projectOverview.tpl.html'
+            templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
+            controller: 'ProjectOverviewController',
+            controllerAs: 'controller'
         }
     }
 
