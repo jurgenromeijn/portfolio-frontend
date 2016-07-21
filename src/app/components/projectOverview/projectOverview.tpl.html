@@ -1,3 +1,3 @@
 <ul ng-repeat="project in controller.projects">
-    <li>{{project.title}}</li>
+    <li><a ui-sref="projects-detail({slug: project.slug})">{{project.title}}</a></li>
 </ul>
