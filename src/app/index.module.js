@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('app.portfolio', ['ngAnimate', 'ngMessages', 'ui.router', 'ui.bootstrap']);
+    .module('app.portfolio', ['ngAnimate', 'ngMessages', 'ngLodash', 'ui.router', 'ui.bootstrap']);
 
 })();
