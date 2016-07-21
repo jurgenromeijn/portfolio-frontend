@@ -5,13 +5,15 @@
 (function (angular) {
     'use strict';
     
-    function ProjectOverviewController() {
+    function ProjectOverviewController(projectService) {
+        this._projectService = projectService;
+
         this.projects = this._getProjects();
     }
 
     ProjectOverviewController.prototype._getProjects = function () {
-        // get all the projects.
+        return this._projectService.getProjects();
     };
 
-    angular.module('app.portfolio').controller('ProjectOverviewController', ProjectOverviewController);
+    angular.module('app.portfolio').controller('projectOverviewController', ProjectOverviewController);
 })(window.angular);

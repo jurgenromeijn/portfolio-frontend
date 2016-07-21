@@ -9,7 +9,7 @@
         return {
             restrict: 'A',
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
-            controller: 'ProjectOverviewController',
+            controller: 'projectOverviewController',
             controllerAs: 'controller'
         }
     }
