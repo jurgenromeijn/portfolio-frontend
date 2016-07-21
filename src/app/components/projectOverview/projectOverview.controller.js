@@ -9,6 +9,7 @@
         this._projectService = projectService;
 
         this.projects = [];
+
         this._getProjects();
     }
 

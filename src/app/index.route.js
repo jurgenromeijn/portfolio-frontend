@@ -14,7 +14,7 @@
             })
             .state('projects', {
                 url: '/projecten',
-                templateUrl: 'app/pages/projects/projects.html'
+                templateUrl: 'app/pages/project/overview/project-overview.html'
             })
 
         $urlRouterProvider.otherwise('/');
