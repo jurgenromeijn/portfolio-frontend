@@ -6,7 +6,7 @@
         .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider) {
+    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         $stateProvider
             .state('home', {
                 url: '/',
@@ -20,6 +20,10 @@
                 url: '/projecten/{slug}',
                 templateUrl: 'app/pages/project/detail/project-detail.html'
             });
+
+        if(window.history && window.history.pushState){
+            $locationProvider.html5Mode(true);
+        }
 
         $urlRouterProvider.otherwise('/');
     }
