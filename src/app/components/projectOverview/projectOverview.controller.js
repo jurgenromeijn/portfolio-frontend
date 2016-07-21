@@ -8,11 +8,15 @@
     function ProjectOverviewController(projectService) {
         this._projectService = projectService;
 
-        this.projects = this._getProjects();
+        this.projects = [];
+        this._getProjects();
     }
 
     ProjectOverviewController.prototype._getProjects = function () {
-        return this._projectService.getProjects();
+        var that = this;
+        this._projectService.getProjects().then(function (projects) {
+            that.projects = projects;
+        });
     };
 
     angular.module('app.portfolio').controller('projectOverviewController', ProjectOverviewController);

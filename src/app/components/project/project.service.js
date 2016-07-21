@@ -5,28 +5,28 @@
 (function (angular) {
     'use strict';
 
-    function ProjectService($http) {
+    function ProjectService($http, $q) {
         this._$http = $http;
+        this._$q = $q;
 
         this._projects = null;
     }
 
     ProjectService.prototype.getProjects = function () {
+        var that = this,
+            projectDefer = this._$q.defer();
+
         if (this._projects === null) {
-            this._loadProjects();
+            this._$http.get('http://localhost:8000/wp-json/projects/v1/project').then(function (response) {
+                that._projects = response.data;
+                projectDefer.resolve(response.data);
+            });
+        } else {
+            projectDefer.resolve(this._projects);
         }
-        return this._projects;
+
+        return projectDefer.promise;
     };
 
-    ProjectService.prototype._loadProjects = function () {
-        var that = this;
-        this._$http({
-            method: 'GET',
-            url: 'http://localhost:8000/wp-json/projects/v1/project'
-        }).then(function (response) {
-            that._projects = response.data;
-        });
-    };
-    
     angular.module('app.portfolio').service('projectService', ProjectService);
 })(window.angular);
