@@ -5,18 +5,21 @@
 (function (angular) {
     'use strict';
 
-    function ProjectController($stateParams, projectService) {
+    function ProjectController($stateParams, $sce, projectService) {
         this._projectService = projectService;
+        this._$sce = $sce;
 
-        this.project = null;
+        this.title = "";
+        this.content = "";
 
-        this.findProject($stateParams.slug);
+        this.getProject($stateParams.slug);
     }
 
-    ProjectController.prototype.findProject = function (slug) {
+    ProjectController.prototype.getProject = function (slug) {
         var that = this;
-        this._projectService.findProject(slug).then(function (project) {
-            that.project = project;
+        this._projectService.getProject(slug).then(function (project) {
+            that.title = project.title;
+            that.content = that._$sce.trustAsHtml(project.content);
         });
     };
 
