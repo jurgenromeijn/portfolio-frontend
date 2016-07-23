@@ -5,14 +5,16 @@
 (function () {
     'use strict';
 
-    angular
-        .module('app.portfolio')
-        .directive('pageHeader', pageHeader);
-
+    /**
+     * Show the header of the page.
+     * @returns {{restrict: string, templateUrl: string}}
+     */
     function pageHeader() {
         return {
             restrict: 'A',
             templateUrl: 'app/components/pageHeader/pageHeader.tpl.html'
         };
     }
+
+    angular.module('app.portfolio').directive('pageHeader', pageHeader);
 })();

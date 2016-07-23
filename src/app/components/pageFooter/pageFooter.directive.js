@@ -5,14 +5,15 @@
 (function () {
     'use strict';
 
-    angular
-        .module('app.portfolio')
-        .directive('pageFooter', pageFooter)
-    
+    /**
+     * Show the footer of the page.
+     * @returns {{restrict: string, templateUrl: string}}
+     */
     function pageFooter() {
         return {
             restrict: 'A',
             templateUrl: 'app/components/pageFooter/pageFooter.tpl.html'
         }
     }
+    angular.module('app.portfolio').directive('pageFooter', pageFooter)
 })();
