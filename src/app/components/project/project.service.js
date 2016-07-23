@@ -2,49 +2,61 @@
  * Created on 21/07/16.
  * @author Jurgen Romeijn
  */
-(function (angular) {
+(function () {
     'use strict';
 
+    /**
+     * A service that contains all functionality to fetch projects from the project api.
+     * @param $http
+     * @param $q
+     * @param lodash
+     * @param api
+     * @constructor
+     */
     function ProjectService($http, $q, lodash, api) {
-        this._$http = $http;
-        this._$q = $q;
-        this._lodash = lodash;
-        this._api = api;
+        var that = this;
 
         this._projects = null;
+
+        /**
+         * Get all projects.
+         * @returns {Promise}
+         */
+        this.getProjects = function () {
+            return $q(function (resolve) {
+                if (that._projects === null) {
+                    $http.get(getProjectApiUrl()).then(function (response) {
+                        that._projects = response.data;
+                        resolve(response.data);
+                    });
+                } else {
+                    resolve(that._projects);
+                }
+            });
+        };
+
+        /**
+         * Get a single project with a certain slug.
+         * @param {string} slug
+         * @returns {Promise}
+         */
+        this.getProject = function (slug) {
+            return $q(function (resolve) {
+                that.getProjects().then(function (projects) {
+                    var project = lodash.find(projects, {'slug': slug});
+                    resolve(project);
+                });
+            });
+        };
+
+        /**
+         * Return the url of the project api.
+         * @returns {string}
+         */
+        function getProjectApiUrl() {
+            return [api.baseUrl, api.endpoints.projects].join('');
+        }
     }
 
-    ProjectService.prototype.getProjects = function () {
-        var that = this,
-            projectsDefer = this._$q.defer();
-
-        if (this._projects === null) {
-            this._$http.get(this._getProjectApiUrl()).then(function (response) {
-                that._projects = response.data;
-                projectsDefer.resolve(response.data);
-            });
-        } else {
-            projectsDefer.resolve(this._projects);
-        }
-
-        return projectsDefer.promise;
-    };
-
-    ProjectService.prototype.getProject = function (slug) {
-        var that = this,
-            projectDefer = this._$q.defer();
-
-        this.getProjects().then(function (projects) {
-            var project = that._lodash.find(projects, {'slug': slug});
-            projectDefer.resolve(project);
-        });
-
-        return projectDefer.promise;
-    };
-
-    ProjectService.prototype._getProjectApiUrl = function () {
-        return [this._api.baseUrl, this._api.endpoints.projects].join('');
-    };
-
     angular.module('app.portfolio').service('projectService', ProjectService);
-})(window.angular);
+})();

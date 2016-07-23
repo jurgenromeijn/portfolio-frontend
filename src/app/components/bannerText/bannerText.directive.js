@@ -5,10 +5,10 @@
 (function () {
     'use strict';
 
-    angular
-        .module('app.portfolio')
-        .directive('bannerText', bannerText);
-
+    /**
+     * Show a banner with text.
+     * @returns {{restrict: string, transclude: boolean, scope: {image: string}, templateUrl: string}}
+     */
     function bannerText() {
         return {
             restrict: 'A',
@@ -19,4 +19,5 @@
             templateUrl: 'app/components/bannerText/bannerText.tpl.html'
         };
     }
+    angular.module('app.portfolio').directive('bannerText', bannerText);
 })();

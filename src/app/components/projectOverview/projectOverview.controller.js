@@ -2,23 +2,30 @@
  * Created on 21/07/16.
  * @author Jurgen Romeijn
  */
-(function (angular) {
+(function () {
     'use strict';
-    
+
+    /**
+     * This controller is used to add all projects to the view model.
+     * @param projectService
+     * @constructor
+     */
     function ProjectOverviewController(projectService) {
-        this._projectService = projectService;
+        var vm = this;
 
-        this.projects = [];
+        vm.projects = [];
 
-        this._getProjects();
+        /**
+         * Get all projects.
+         */
+        function getProjects() {
+            projectService.getProjects().then(function (projects) {
+                vm.projects = projects;
+            });
+        }
+        
+        getProjects();
     }
 
-    ProjectOverviewController.prototype._getProjects = function () {
-        var that = this;
-        this._projectService.getProjects().then(function (projects) {
-            that.projects = projects;
-        });
-    };
-
-    angular.module('app.portfolio').controller('projectOverviewController', ProjectOverviewController);
-})(window.angular);
+    angular.module('app.portfolio').controller('ProjectOverviewController', ProjectOverviewController);
+})();

@@ -2,17 +2,21 @@
  * Created on 21/07/16.
  * @author Jurgen Romeijn
  */
-(function (angular) {
+(function () {
     'use strict';
 
+    /**
+     * Show an overview of projects.
+     * @returns {{restrict: string, templateUrl: string, controller: string, controllerAs: string}}
+     */
     function projectOverview() {
         return {
             restrict: 'A',
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
-            controller: 'projectOverviewController',
+            controller: 'ProjectOverviewController',
             controllerAs: 'controller'
         }
     }
 
     angular.module('app.portfolio').directive('projectOverview', projectOverview);
-})(window.angular);
+})();

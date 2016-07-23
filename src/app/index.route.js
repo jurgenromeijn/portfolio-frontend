@@ -6,7 +6,9 @@
         .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider) {
+        var $window = $windowProvider.$get();
+        
         $stateProvider
             .state('home', {
                 url: '/',
@@ -21,7 +23,7 @@
                 templateUrl: 'app/pages/project/detail/project-detail.html'
             });
 
-        if(window.history && window.history.pushState){
+        if($window.history && $window.history.pushState){
             $locationProvider.html5Mode(true);
         }
 
