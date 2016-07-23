@@ -8,22 +8,18 @@
     function ProjectController($stateParams, $sce, projectService) {
         var vm = this;
 
-        vm._projectService = projectService;
-        vm._$sce = $sce;
-
         vm.title = "";
         vm.content = "";
 
-        vm.getProject($stateParams.slug);
-    }
+        function getProject(slug) {
+            projectService.getProject(slug).then(function (project) {
+                vm.title = project.title;
+                vm.content = $sce.trustAsHtml(project.content);
+            });
+        }
 
-    ProjectController.prototype.getProject = function (slug) {
-        var vm = this;
-        vm._projectService.getProject(slug).then(function (project) {
-            vm.title = project.title;
-            vm.content = vm._$sce.trustAsHtml(project.content);
-        });
-    };
+        getProject($stateParams.slug);
+    }
 
     angular.module('app.portfolio').controller('ProjectController', ProjectController);
 })();
