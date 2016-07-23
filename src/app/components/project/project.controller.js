@@ -25,5 +25,5 @@
         });
     };
 
-    angular.module('app.portfolio').controller('projectController', ProjectController);
+    angular.module('app.portfolio').controller('ProjectController', ProjectController);
 })();
