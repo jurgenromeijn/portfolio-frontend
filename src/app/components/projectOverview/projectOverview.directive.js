@@ -5,6 +5,10 @@
 (function () {
     'use strict';
 
+    /**
+     * Show an overview of projects.
+     * @returns {{restrict: string, templateUrl: string, controller: string, controllerAs: string}}
+     */
     function projectOverview() {
         return {
             restrict: 'A',
