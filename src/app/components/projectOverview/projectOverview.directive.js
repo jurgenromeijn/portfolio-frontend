@@ -2,7 +2,7 @@
  * Created on 21/07/16.
  * @author Jurgen Romeijn
  */
-(function (angular) {
+(function () {
     'use strict';
 
     function projectOverview() {
@@ -15,4 +15,4 @@
     }
 
     angular.module('app.portfolio').directive('projectOverview', projectOverview);
-})(window.angular);
+})();
