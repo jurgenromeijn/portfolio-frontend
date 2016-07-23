@@ -1,5 +1,5 @@
 /* global */
-(function(angular) {
+(function() {
   'use strict';
 
   angular.module('app.portfolio')
@@ -9,5 +9,4 @@
           'projects': '/wp-json/projects/v1/project'
         }
       });
-
-})(window.angular);
+})();
