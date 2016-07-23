@@ -5,11 +5,23 @@
 (function () {
     'use strict';
 
+    /**
+     * A service that contains all functionality to fetch projects from the project api.
+     * @param $http
+     * @param $q
+     * @param lodash
+     * @param api
+     * @constructor
+     */
     function ProjectService($http, $q, lodash, api) {
         var that = this;
 
         this._projects = null;
 
+        /**
+         * Get all projects.
+         * @returns {Promise}
+         */
         this.getProjects = function () {
             return $q(function (resolve) {
                 if (that._projects === null) {
@@ -23,6 +35,11 @@
             });
         };
 
+        /**
+         * Get a single project with a certain slug.
+         * @param {string} slug
+         * @returns {Promise}
+         */
         this.getProject = function (slug) {
             return $q(function (resolve) {
                 that.getProjects().then(function (projects) {
@@ -32,6 +49,10 @@
             });
         };
 
+        /**
+         * Return the url of the project api.
+         * @returns {string}
+         */
         function getProjectApiUrl() {
             return [api.baseUrl, api.endpoints.projects].join('');
         }
