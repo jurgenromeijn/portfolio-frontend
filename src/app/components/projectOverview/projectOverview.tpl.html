@@ -1,12 +1,14 @@
-<div class="row">
-    <ul class="list-unstyled" ng-repeat="project in controller.projects">
-        <li class="col-md-4">
+<div class="project-overview">
+    <ul class="list-unstyled row">
+        <li class="col-md-6" ng-repeat="project in controller.projects">
             <a ui-sref="projects-detail({slug: project.slug})">
-                <figure>
+                <figure class="project-thumb">
                     <img src="{{project.featuredImage.sizeVariants.post_thumbnail.url}}">
-                    <figcaption>
-                        <h3>{{project.title}}</h3>
-                        <p>{{project.excerpt}}</p>
+                    <figcaption class="project-caption">
+                        <div>
+                            <h3 class="project-title">{{project.title}}</h3>
+                            <p class="project-excerpt">{{project.excerpt}}</p>
+                        </div>
                     </figcaption>
                 </figure>
             </a>

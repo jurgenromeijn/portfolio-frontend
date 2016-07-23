@@ -1,0 +1,78 @@
+.project-overview {
+}
+
+.project-thumb {
+  position: relative;
+  margin-bottom: $spacing;
+
+  img {
+    width: 100%;
+  }
+
+  .project-caption {
+    display: flex;
+    align-items: center;
+    color: $black !important;
+    background-color: transparent;
+    padding: $spacing;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    transition: background-color 0.3s;
+
+    .project-title {
+      position: relative;
+      top: $spacing;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .project-excerpt {
+      position: relative;
+      top: $spacing;
+      opacity: 0;
+      transition: all 0.3s;
+
+      &::before {
+        margin-bottom: 10px;
+        display: block;
+        content: " ";
+        background: $black;
+        height: 1px;
+        width: $spacing;
+      }
+    }
+  }
+
+  &:hover .project-caption {
+    display: flex;
+    align-items: center;
+    color: $black !important;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: $spacing;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .project-title {
+      opacity: 1;
+      top: 0;
+    }
+
+    .project-excerpt {
+      opacity: 1;
+      top: 0;
+    }
+
+    hr {
+      color: $black !important;
+      border: 1px solid $black;
+      width: 20px;
+    }
+  }
+}
