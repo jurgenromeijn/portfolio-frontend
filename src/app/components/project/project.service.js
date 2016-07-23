@@ -6,33 +6,30 @@
     'use strict';
 
     function ProjectService($http, $q, lodash, api) {
+        var that = this;
+
         this._projects = null;
 
         this.getProjects = function () {
-            var that = this,
-                projectsDefer = $q.defer();
-
-            if (this._projects === null) {
-                $http.get(getProjectApiUrl()).then(function (response) {
-                    that._projects = response.data;
-                    projectsDefer.resolve(response.data);
-                });
-            } else {
-                projectsDefer.resolve(this._projects);
-            }
-
-            return projectsDefer.promise;
+            return $q(function (resolve) {
+                if (that._projects === null) {
+                    $http.get(getProjectApiUrl()).then(function (response) {
+                        that._projects = response.data;
+                        resolve(response.data);
+                    });
+                } else {
+                    resolve(that._projects);
+                }
+            });
         };
 
         this.getProject = function (slug) {
-            var projectDefer = $q.defer();
-
-            this.getProjects().then(function (projects) {
-                var project = lodash.find(projects, {'slug': slug});
-                projectDefer.resolve(project);
+            return $q(function (resolve) {
+                that.getProjects().then(function (projects) {
+                    var project = lodash.find(projects, {'slug': slug});
+                    resolve(project);
+                });
             });
-
-            return projectDefer.promise;
         };
 
         function getProjectApiUrl() {
