@@ -6,7 +6,9 @@
         .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $window) {
+    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider) {
+        var $window = $windowProvider.$get();
+        
         $stateProvider
             .state('home', {
                 url: '/',
