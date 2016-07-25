@@ -6,3 +6,8 @@ body {
   height: 100%;
   padding-top: $navbar-height;
 }
+
+.content-regular {
+  margin-top: 2* $spacing - 20px;
+  margin-bottom: $spacing;
+}

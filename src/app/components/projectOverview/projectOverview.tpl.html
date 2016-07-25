@@ -1,3 +1,19 @@
-<ul ng-repeat="project in controller.projects">
-    <li><a ui-sref="projects-detail({slug: project.slug})">{{project.title}}</a></li>
-</ul>
+<div class="project-overview">
+    <ul class="list-unstyled row">
+        <li class="col-md-6" ng-repeat="project in controller.projects">
+            <a ui-sref="projects-detail({slug: project.slug})">
+                <figure class="project-thumb">
+                    <img src="{{project.featuredImage.sizeVariants.post_thumbnail.url}}">
+                    <figcaption class="project-caption">
+                        <div>
+                            <div class="heading project-title">
+                                <h3>{{project.title}}</h3>
+                            </div>
+                            <p class="project-excerpt">{{project.excerpt}}</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+    </ul>
+</div>
