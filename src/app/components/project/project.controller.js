@@ -17,6 +17,7 @@
 
         vm.title = "";
         vm.content = "";
+        vm.featuredImage = "";
 
         /**
          * Get a project for a slug.
@@ -26,6 +27,7 @@
             projectService.getProject(slug).then(function (project) {
                 vm.title = project.title;
                 vm.content = $sce.trustAsHtml(project.content);
+                vm.featuredImage = project.featuredImage;
             });
         }
 

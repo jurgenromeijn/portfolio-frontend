@@ -1,4 +1,9 @@
-<div class="container" ng-controller="ProjectController as project">
-    <h1>{{project.title}}</h1>
-    <div ng-bind-html="project.content"></div>
-</div>
+<section class="container" ng-controller="ProjectController as project">
+    <img src="{{project.featuredImage.url}}" class="img-responsive">
+    <div class="content-regular">
+        <header class="heading">
+            <h1>{{project.title}}</h1>
+        </header>
+        <div ng-bind-html="project.content"></div>
+    </div>
+</section>
