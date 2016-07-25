@@ -4,6 +4,10 @@
         <header class="heading">
             <h1>{{project.title}}</h1>
         </header>
+        <ol class="breadcrumb">
+            <li><a ui-sref="projects">Projecten</a></li>
+            <li class="active">{{project.title}}</li>
+        </ol>
         <div ng-bind-html="project.content"></div>
     </div>
 </section>
