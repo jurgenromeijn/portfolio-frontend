@@ -12,11 +12,13 @@
   .project-caption {
     display: flex;
     align-items: center;
+    padding: $spacing;
+
     color: $black !important;
     background-color: transparent;
-    padding: $spacing;
+
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
@@ -24,6 +26,8 @@
     transition: background-color 0.3s;
 
     .project-title {
+      margin-bottom: 10px;
+
       position: relative;
       top: $spacing;
       opacity: 0;
@@ -39,16 +43,7 @@
   }
 
   &:hover .project-caption {
-    display: flex;
-    align-items: center;
-    color: $black !important;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: $spacing;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    bottom: 0;
-    right: 0;
 
     .project-title {
       opacity: 1;

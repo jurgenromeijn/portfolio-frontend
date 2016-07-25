@@ -3,6 +3,8 @@
 }
 
 .heading {
+  margin-bottom: 1.67 * $spacing;
+
   &::after {
     margin-bottom: 10px;
     display: block;
