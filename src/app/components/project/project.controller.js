@@ -29,8 +29,19 @@
                 vm.title = project.title;
                 vm.content = $sce.trustAsHtml(project.content);
                 vm.featuredImage = project.featuredImage;
-                vm.images = project.images;
+                vm.images = getImagesWithoutFeaturedImage(project);
             });
+        }
+
+        /**
+         * Return an array of images without the featured image.
+         * @param project
+         * @returns {Array.<Image>}
+         */
+        function getImagesWithoutFeaturedImage(project) {
+            return project.images.filter(function (image) {
+                return image.url != project.featuredImage.url;
+            })
         }
 
         getProject($stateParams.slug);
