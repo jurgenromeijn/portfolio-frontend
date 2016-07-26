@@ -8,11 +8,13 @@
             <li><a ui-sref="projects">Projecten</a></li>
             <li class="active">{{project.title}}</li>
         </ol>
-        <div ng-bind-html="project.content"></div>
-        <ul class="list-unstyled">
-            <li ng-repeat="image in project.images">
-                <img src="{{image.url}}" class="img-responsive">
-            </li>
-        </ul>
+        <div class="row">
+            <div ng-bind-html="project.content" class="col-md-6"></div>
+            <ul class="list-unstyled col-md-6">
+                <li ng-repeat="image in project.images">
+                    <img src="{{image.url}}" class="project-image img-responsive">
+                </li>
+            </ul>
+        </div>
     </div>
 </section>
