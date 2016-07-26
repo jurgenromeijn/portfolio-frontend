@@ -9,5 +9,10 @@
             <li class="active">{{project.title}}</li>
         </ol>
         <div ng-bind-html="project.content"></div>
+        <ul class="list-unstyled">
+            <li ng-repeat="image in project.images">
+                <img src="{{image.url}}" class="img-responsive">
+            </li>
+        </ul>
     </div>
 </section>

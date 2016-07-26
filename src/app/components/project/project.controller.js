@@ -18,6 +18,7 @@
         vm.title = "";
         vm.content = "";
         vm.featuredImage = "";
+        vm.images = [];
 
         /**
          * Get a project for a slug.
@@ -28,6 +29,7 @@
                 vm.title = project.title;
                 vm.content = $sce.trustAsHtml(project.content);
                 vm.featuredImage = project.featuredImage;
+                vm.images = project.images;
             });
         }
 
