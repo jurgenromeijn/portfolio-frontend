@@ -17,6 +17,8 @@
 
         vm.title = "";
         vm.content = "";
+        vm.featuredImage = "";
+        vm.images = [];
 
         /**
          * Get a project for a slug.
@@ -26,7 +28,20 @@
             projectService.getProject(slug).then(function (project) {
                 vm.title = project.title;
                 vm.content = $sce.trustAsHtml(project.content);
+                vm.featuredImage = project.featuredImage;
+                vm.images = getImagesWithoutFeaturedImage(project);
             });
+        }
+
+        /**
+         * Return an array of images without the featured image.
+         * @param project
+         * @returns {Array.<Image>}
+         */
+        function getImagesWithoutFeaturedImage(project) {
+            return project.images.filter(function (image) {
+                return image.url != project.featuredImage.url;
+            })
         }
 
         getProject($stateParams.slug);

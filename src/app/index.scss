@@ -55,6 +55,16 @@ $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         $gray-darker !default;
 $navbar-default-link-active-bg:            transparent !default;
 
+
+//== Breadcrumbs
+//
+//##
+$breadcrumb-padding-vertical:     0;
+$breadcrumb-padding-horizontal:   0;
+$breadcrumb-bg:                   transparent;
+$breadcrumb-color:                $black;
+$breadcrumb-active-color:         $black;
+
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
