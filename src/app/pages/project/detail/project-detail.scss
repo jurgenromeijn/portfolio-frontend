@@ -1,3 +1,11 @@
 .project-image {
   margin-bottom: $spacing;
+
+  &:nth-child(odd) {
+    float: left;
+  }
+
+  &:nth-child(even) {
+    float: right;
+  }
 }

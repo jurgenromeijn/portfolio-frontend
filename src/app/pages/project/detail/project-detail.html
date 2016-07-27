@@ -16,8 +16,8 @@
             <div ng-bind-html="project.info" class="col-sm-4" style="border-left: 1px solid #000; padding: 15px 0 0 15px;"></div>
         </div>
         <ul class="list-unstyled row">
-            <li ng-repeat="image in project.images" class="col-md-6">
-                <img src="{{image.url}}" class="project-image img-responsive">
+            <li ng-repeat="image in project.images" class="col-md-6 project-image">
+                <img src="{{image.url}}" class="img-responsive">
             </li>
         </ul>
     </div>
