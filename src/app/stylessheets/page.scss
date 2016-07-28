@@ -8,6 +8,6 @@ body {
 }
 
 .content-regular {
-  padding-top: 2* $spacing - 20px;
-  padding-bottom: $spacing;
+  padding-top: $spacing;
+  padding-bottom: $spacing - 10px;
 }
