@@ -8,12 +8,12 @@
             <li><a ui-sref="projects">Projecten</a></li>
             <li class="active">{{project.title}}</li>
         </ol>
-        <div class="row" style="margin-bottom: 40px">
+        <div class="row project-content">
             <div class="col-sm-8">
                 <p ng-bind-html="project.intro" class="lead"></p>
                 <div ng-bind-html="project.content"></div>
             </div>
-            <div ng-bind-html="project.info" class="col-sm-4" style="border-left: 1px solid #000; padding: 15px 0 0 15px;"></div>
+            <div ng-bind-html="project.info" class="col-sm-4 project-info"></div>
         </div>
         <ul class="list-unstyled row">
             <li ng-repeat="image in project.images" class="col-md-6 project-image">
