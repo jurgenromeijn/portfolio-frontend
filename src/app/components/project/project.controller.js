@@ -15,9 +15,11 @@
     function ProjectController($stateParams, $sce, projectService) {
         var vm = this;
 
-        vm.title = "";
-        vm.content = "";
-        vm.featuredImage = "";
+        vm.title = '';
+        vm.intro = '';
+        vm.content = '';
+        vm.info = '';
+        vm.featuredImage = {};
         vm.images = [];
 
         /**
@@ -27,23 +29,14 @@
         function getProject(slug) {
             projectService.getProject(slug).then(function (project) {
                 vm.title = project.title;
+                vm.intro = $sce.trustAsHtml(project.intro);
                 vm.content = $sce.trustAsHtml(project.content);
+                vm.info = $sce.trustAsHtml(project.info);
                 vm.featuredImage = project.featuredImage;
-                vm.images = getImagesWithoutFeaturedImage(project);
+                vm.images = project.images;
             });
         }
-
-        /**
-         * Return an array of images without the featured image.
-         * @param project
-         * @returns {Array.<Image>}
-         */
-        function getImagesWithoutFeaturedImage(project) {
-            return project.images.filter(function (image) {
-                return image.url != project.featuredImage.url;
-            })
-        }
-
+        
         getProject($stateParams.slug);
     }
 

@@ -1,3 +1,23 @@
 .project-image {
   margin-bottom: $spacing;
+
+  &:nth-child(odd) {
+    float: left;
+  }
+
+  &:nth-child(even) {
+    float: right;
+  }
+}
+
+.project-info {
+  @media (min-width: $screen-sm-min) {
+    border-left: 1px solid #000;
+    padding: $spacing / 2 0 0 $spacing / 2;
+    margin-bottom: 10px;
+  }
+}
+
+.project-content {
+  margin-bottom: 40px;
 }
