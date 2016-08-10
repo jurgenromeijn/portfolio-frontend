@@ -20,6 +20,8 @@
             })
             .state('projects-detail', {
                 url: '/projecten/{slug}',
+                controller: 'ProjectController',
+                controllerAs: 'project',
                 templateUrl: 'app/pages/project/detail/projectDetail.tpl.html'
             });
 
