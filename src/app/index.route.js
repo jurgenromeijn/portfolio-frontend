@@ -12,15 +12,15 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'app/pages/home/home.html'
+                templateUrl: 'app/pages/home/home.tpl.html'
             })
             .state('projects', {
                 url: '/projecten',
-                templateUrl: 'app/pages/project/overview/project-overview.html'
+                templateUrl: 'app/pages/project/overview/projectOverview.tpl.html'
             })
             .state('projects-detail', {
                 url: '/projecten/{slug}',
-                templateUrl: 'app/pages/project/detail/project-detail.html'
+                templateUrl: 'app/pages/project/detail/projectDetail.tpl.html'
             });
 
         if($window.history && $window.history.pushState){
