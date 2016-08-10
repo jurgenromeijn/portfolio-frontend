@@ -12,8 +12,6 @@
      * @constructor
      */
     function ContactService($http, api) {
-        var that = this;
-
         /**
          * Submit the contact data.
          * @param data

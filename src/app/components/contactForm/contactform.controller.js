@@ -5,11 +5,11 @@
 (function () {
     'use strict';
 
-    function ContactFormController() {
+    function ContactFormController(contactService) {
         var vm = this;
 
         vm.submit = function (formData) {
-            alert('send');
+            contactService.submit(formData);
         };
     }
 
