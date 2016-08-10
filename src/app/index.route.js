@@ -23,7 +23,12 @@
                 controller: 'ProjectController',
                 controllerAs: 'project',
                 templateUrl: 'app/pages/project/detail/projectDetail.tpl.html'
-            });
+            })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: 'app/pages/contact/contact.tpl.html'
+            })
+        ;
 
         if($window.history && $window.history.pushState){
             $locationProvider.html5Mode(true);
