@@ -8,6 +8,8 @@
     function contactForm() {
         return {
             restrict: 'A',
+            controller: 'ContactFormController',
+            controllerAs: 'contactForm'
         }
     }
 
