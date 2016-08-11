@@ -53,7 +53,7 @@
          * @returns {string}
          */
         function getProjectApiUrl() {
-            return [api.baseUrl, api.endpoints.projects].join('');
+            return [api.baseUrl, api.endpoints.projects].join('/');
         }
     }
 
