@@ -15,8 +15,7 @@
      */
     function ProjectService($http, $q, lodash, api) {
         var that = this;
-
-        this._projects = null;
+        var _projects = null;
 
         /**
          * Get all projects.
@@ -24,13 +23,13 @@
          */
         this.getProjects = function () {
             return $q(function (resolve) {
-                if (that._projects === null) {
+                if (_projects === null) {
                     $http.get(getProjectApiUrl()).then(function (response) {
-                        that._projects = response.data;
+                        _projects = response.data;
                         resolve(response.data);
                     });
                 } else {
-                    resolve(that._projects);
+                    resolve(_projects);
                 }
             });
         };
