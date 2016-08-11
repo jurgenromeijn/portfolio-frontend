@@ -1,7 +1,25 @@
 <form ng-submit="contactForm.submit(data)">
-    <div text-input name="ccf_field_name" label="Naam"></div>
-    <div email-input name="ccf_field_email" label="E-mailadres"></div>
-    <div text-input name="ccf_field_message" label="Bericht" rows="7"></div>
+    <div ng-repeat="field in contactForm.formDefinition.fields">
+        <div ng-if="field.type === 'single-line-text'"
+             text-input
+             name="{{field.slug}}"
+             label="{{field.label}}"
+             placeholder="{{field.placeholder}}"
+             value="{{field.value}}"></div>
+        <div ng-if="field.type === 'email'"
+             email-input
+             name="{{field.slug}}"
+             label="{{field.label}}"
+             placeholder="{{field.placeholder}}"
+             value="{{field.value}}"></div>
+        <div ng-if="field.type === 'paragraph-text'"
+             text-input
+             name="{{field.slug}}"
+             label="{{field.label}}"
+             placeholder="{{field.placeholder}}"
+             value="{{field.value}}"
+             rows="7"></div>
+    </div>
     <div submit-input value="Verzenden"></div>
     <input type="hidden" name="form_id" ng-model="data.form_id" value="365">
     <input type="hidden" name="ccf_form" ng-model="data.ccf_form" value="1">
