@@ -8,10 +8,11 @@
     /**
      * A service used for sending a contact form.
      * @param $http
+     * @param $q
      * @param api
      * @constructor
      */
-    function ContactService($http, $q, api) {
+    function ContactFormService($http, $q, api) {
         var formDefinitions = [];
 
         /**
@@ -59,5 +60,5 @@
         }
     }
 
-    angular.module('app.portfolio').service('contactService', ContactService);
+    angular.module('app.portfolio').service('contactFormService', ContactFormService);
 })();

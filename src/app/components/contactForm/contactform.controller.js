@@ -5,11 +5,11 @@
 (function () {
     'use strict';
 
-    function ContactFormController(contactService) {
+    function ContactFormController($scope, contactFormService) {
         var vm = this;
 
         vm.submit = function (formData) {
-            contactService.submit(formData);
+            contactFormService.submit(formData);
         };
     }
 
