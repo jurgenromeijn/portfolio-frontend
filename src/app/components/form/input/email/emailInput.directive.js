@@ -5,6 +5,10 @@
 (function () {
     'use strict';
 
+    /**
+     * A directive to display an email field.
+     * @returns {{restrict: string, scope: {name: string, label: string, placeholder: string, value: string}, templateUrl: string}}
+     */
     function emailInput() {
         return {
             restrict: 'A',

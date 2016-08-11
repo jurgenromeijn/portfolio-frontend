@@ -5,6 +5,10 @@
 (function () {
     'use strict';
 
+    /**
+     * A directive to display a submit button.
+     * @returns {{restrict: string, scope: {value: string}, templateUrl: string}}
+     */
     function submitInput() {
         return {
             restrict: 'A',

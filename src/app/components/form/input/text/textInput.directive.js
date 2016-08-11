@@ -5,6 +5,10 @@
 (function () {
     'use strict';
 
+    /**
+     * A directive to display a text field. Set rows to 2 or more to get a multi-line field.
+     * @returns {{restrict: string, scope: {name: string, label: string, placeholder: string, value: string, rows: string}, templateUrl: string}}
+     */
     function textInput() {
         return {
             restrict: 'A',
