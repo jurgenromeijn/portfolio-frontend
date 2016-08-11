@@ -12,7 +12,8 @@
                 name: '@',
                 label: '@',
                 placeholder: '@',
-                value: '@'
+                value: '@',
+                rows: '@'
             },
             templateUrl: 'app/components/form/input/text/textInput.tpl.html'
         }

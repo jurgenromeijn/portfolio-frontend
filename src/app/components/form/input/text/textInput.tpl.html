@@ -1,10 +1,19 @@
 <div class="form-group">
     <label ng-attr-for="{{name}}">{{label}}</label>
-    <input class="form-control"
-            type="text"
-            ng-attr-name="{{name}}"
-            ng-attr-id="{{name}}"
-            ng-attr-model="data.{{name}}"
-            ng-attr-placeholder="{{placeholder}}"
-            ng-attr-value="{{value}}">
+    <input ng-if="rows === undefined || rows <= 1"
+           class="form-control"
+           type="text"
+           ng-attr-name="{{name}}"
+           ng-attr-id="{{name}}"
+           ng-attr-model="data.{{name}}"
+           ng-attr-placeholder="{{placeholder}}"
+           ng-attr-value="{{value}}">
+    <textarea ng-if="rows !== undefined || rows > 1"
+              class="form-control"
+              ng-attr-name="{{name}}"
+              ng-attr-id="{{name}}"
+              ng-attr-model="data.{{name}}"
+              ng-attr-placeholder="{{placeholder}}"
+              ng-attr-value="{{value}}">
+              ng-attr-rows="{{rows}}"></textarea>
 </div>
