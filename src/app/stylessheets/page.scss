@@ -5,9 +5,20 @@ html {
 body {
   height: 100%;
   padding-top: $navbar-height;
+  font-weight: $font-weight;
 }
 
 .content-regular {
   padding-top: $spacing;
   padding-bottom: $spacing - 10px;
+}
+
+p {
+  margin: 0 0 20px;
+
+  &.lead {
+    margin: 0 0 20px;
+    font-size: $font-size-large;
+    line-height: $line-height-base;
+  }
 }
