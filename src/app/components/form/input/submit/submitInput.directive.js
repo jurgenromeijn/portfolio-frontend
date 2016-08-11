@@ -9,7 +9,6 @@
         return {
             restrict: 'A',
             scope: {
-                class: '@',
                 value: '@'
             },
             templateUrl: 'app/components/form/input/submit/submitInput.tpl.html'

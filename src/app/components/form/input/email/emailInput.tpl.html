@@ -1,10 +1,10 @@
 <div class="form-group">
-    <label ng-attr-for="name">{{label}}</label>
+    <label for="{{name}}">{{label}}</label>
     <input type="email"
-           ng-class="'form-control ' + class"
-           ng-attr-name="name"
-           ng-attr-id="name"
-           ng-attr-model="'data.' + name"
-           ng-attr-placeholder="placeholder"
-           ng-attr-value="value">
+           class="form-control"
+           name="{{name}}"
+           id="{{name}}"
+           ng-model="data[name]"
+           ng-value="value"
+           placeholder="{{placeholder}}">
 </div>

@@ -9,7 +9,6 @@
         return {
             restrict: 'A',
             scope: {
-                class: '@',
                 name: '@',
                 label: '@',
                 placeholder: '@',
