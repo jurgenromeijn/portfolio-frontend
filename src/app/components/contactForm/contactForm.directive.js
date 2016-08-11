@@ -9,7 +9,12 @@
         return {
             restrict: 'A',
             controller: 'ContactFormController',
-            controllerAs: 'contactForm'
+            controllerAs: 'contactForm',
+            scope: {
+                id: '@',
+                nonce: '@'
+            },
+            templateUrl: 'app/components/contactForm/contactForm.tpl.html'
         }
     }
 

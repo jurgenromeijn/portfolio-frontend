@@ -15,14 +15,6 @@
                 <i class="icon-phone"></i> Telefoon: 06 &#8211; 17 50 99 31
             </address>
         </div>
-        <form class="col-sm-6" contact-form ng-submit="contactForm.submit(data)">
-            <div text-input name="ccf_field_name" label="Naam"></div>
-            <div email-input name="ccf_field_email" label="E-mailadres"></div>
-            <div text-input name="ccf_field_message" label="Bericht" rows="7"></div>
-            <div submit-input value="Verzenden"></div>
-            <input type="hidden" name="form_id" ng-model="data.form_id" value="365">
-            <input type="hidden" name="ccf_form" ng-model="data.ccf_form" value="1">
-            <input type="hidden" name="form_nonce" ng-model="data.form_nonce" value="7d992ed0c5">
-        </form>
+        <div class="col-sm-6" id="365" nonce="7d992ed0c5" contact-form></div>
     </div>
 </section>
