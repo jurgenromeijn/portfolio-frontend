@@ -22,9 +22,11 @@
     </div>
     <div input-submit value="{{contactForm.formDefinition.buttonText}}"></div>
 </form>
-<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true">
+<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true"
+     class="alert alert-success">
     <p>{{contactForm.succesMessage}}</p>
 </div>
-<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === false">
+<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === false"
+     class="alert alert-danger">
     <p>{{contactForm.errorMessage}}</p>
 </div>
