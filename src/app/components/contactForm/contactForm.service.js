@@ -10,9 +10,11 @@
      * @param $http
      * @param $q
      * @param api
+     * @param $httpParamSerializer
+     * @param postDataFactory
      * @constructor
      */
-    function ContactFormService($http, $q, api, postDataFactory) {
+    function ContactFormService($http, $q, api, $httpParamSerializer, postDataFactory) {
         var formDefinitions = [];
 
         /**
@@ -42,7 +44,14 @@
          */
         this.submit = function (formId, nonce, data) {
             var postData = postDataFactory.make(formId, nonce, data);
-            return $http.post(geContactSubmitApiUrl(), postData);
+            return $http({
+                method: 'POST',
+                url: geContactSubmitApiUrl(),
+                data: $httpParamSerializer(postData),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+            });
         };
 
         /**
