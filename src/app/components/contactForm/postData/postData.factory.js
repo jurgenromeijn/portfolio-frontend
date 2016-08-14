@@ -24,7 +24,7 @@
                     form_nonce: nonce,
                     ccf_form: 1
                 };
-                angular.forEach(data, function (key, value) {
+                angular.forEach(data, function (value, key) {
                     var newKey = ['ccf', 'field', key].join('_');
                     postData[newKey] = value;
                 });
