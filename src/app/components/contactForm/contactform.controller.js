@@ -5,12 +5,12 @@
 (function () {
     'use strict';
 
-    function ContactFormController($scope, contactFormService) {
+    function ContactFormController($scope, $window, contactFormService) {
         var vm = this;
 
         vm.formDefinition = null;
         vm.formId = $scope.formId;
-        vm.nonce = $scope.nonce;
+        vm.nonce = $window.nonce;
         vm.data = {};
 
         vm.submit = function () {
