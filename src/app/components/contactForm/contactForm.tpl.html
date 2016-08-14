@@ -1,27 +1,24 @@
-<form ng-submit="contactForm.submit(data)">
+<form ng-submit="contactForm.submit()">
     <div ng-repeat="field in contactForm.formDefinition.fields">
         <div ng-if="field.type === 'single-line-text'"
              text-input
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
-             value="{{field.value}}"></div>
+             model="contactForm.data[field.slug]"></div>
         <div ng-if="field.type === 'email'"
              email-input
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
-             value="{{field.value}}"></div>
+             model="contactForm.data[field.slug]"></div>
         <div ng-if="field.type === 'paragraph-text'"
              text-input
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
-             value="{{field.value}}"
+             model="contactForm.data[field.slug]"
              rows="7"></div>
     </div>
     <div submit-input value="{{contactForm.formDefinition.buttonText}}"></div>
-    <input type="hidden" name="form_id" ng-model="data.form_id" value="365">
-    <input type="hidden" name="ccf_form" ng-model="data.ccf_form" value="1">
-    <input type="hidden" name="form_nonce" ng-model="data.form_nonce" value="7d992ed0c5">
 </form>

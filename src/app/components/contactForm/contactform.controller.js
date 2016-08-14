@@ -9,9 +9,12 @@
         var vm = this;
 
         vm.formDefinition = null;
+        vm.formId = $scope.formId;
+        vm.nonce = $scope.nonce;
+        vm.data = {};
 
-        vm.submit = function (formData) {
-            contactFormService.submit(formData);
+        vm.submit = function () {
+            contactFormService.submit(vm.data);
         };
 
         function getFormDefinition(id) {
@@ -20,7 +23,7 @@
             });
         }
 
-        getFormDefinition($scope.id);
+        getFormDefinition(vm.formId);
     }
 
     angular.module('app.portfolio').controller('ContactFormController', ContactFormController);

@@ -11,7 +11,7 @@
             controller: 'ContactFormController',
             controllerAs: 'contactForm',
             scope: {
-                id: '@',
+                formId: '@',
                 nonce: '@'
             },
             templateUrl: 'app/components/contactForm/contactForm.tpl.html'
