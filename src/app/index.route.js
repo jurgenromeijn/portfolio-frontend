@@ -12,16 +12,23 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'app/pages/home/home.html'
+                templateUrl: 'app/pages/home/home.tpl.html'
             })
             .state('projects', {
                 url: '/projecten',
-                templateUrl: 'app/pages/project/overview/project-overview.html'
+                templateUrl: 'app/pages/project/overview/projectOverview.tpl.html'
             })
             .state('projects-detail', {
                 url: '/projecten/{slug}',
-                templateUrl: 'app/pages/project/detail/project-detail.html'
-            });
+                controller: 'ProjectController',
+                controllerAs: 'project',
+                templateUrl: 'app/pages/project/detail/projectDetail.tpl.html'
+            })
+            .state('contact', {
+                url: '/contact',
+                templateUrl: 'app/pages/contact/contact.tpl.html'
+            })
+        ;
 
         if($window.history && $window.history.pushState){
             $locationProvider.html5Mode(true);

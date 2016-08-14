@@ -1,0 +1,19 @@
+.form-control {
+  @include box-shadow(none);
+  @include transition(none);
+
+  &:focus {
+    @include box-shadow(none);
+    border-color: $gray-light;
+  }
+}
+
+.form-submit {
+  padding-top: 5px;
+}
+
+label {
+  font-family: $font-family-accent;
+  font-size: $font-size-large;
+  text-transform: uppercase;
+}

@@ -1,0 +1,46 @@
+.project-image {
+  margin-bottom: $spacing;
+
+  &:nth-child(odd) {
+    float: left;
+  }
+
+  &:nth-child(even) {
+    float: right;
+  }
+}
+
+.project-info {
+  dt {
+    font-family: $font-family-accent;
+    font-size: $font-size-large;
+    text-transform: uppercase;
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    border-left: 1px solid #000;
+    padding: $spacing / 2 0 0 $spacing / 2;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    &:before {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: block;
+      content: " ";
+      background: $black;
+      height: 1px;
+      width: $spacing;
+    }
+  }
+}
+
+.project-content {
+  margin-bottom: 40px;
+}
