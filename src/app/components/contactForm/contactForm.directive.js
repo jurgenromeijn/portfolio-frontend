@@ -12,7 +12,7 @@
             controllerAs: 'contactForm',
             scope: {
                 formId: '@',
-                nonce: '@'
+                errorMessage: '@'
             },
             templateUrl: 'app/components/contactForm/contactForm.tpl.html'
         }

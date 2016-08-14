@@ -1,4 +1,4 @@
-<form ng-submit="contactForm.submit()">
+<form ng-if="contactForm.isSubmitted === false" ng-submit="contactForm.submit()">
     <div ng-repeat="field in contactForm.formDefinition.fields">
         <div ng-if="field.type === 'single-line-text'"
              text-input
@@ -22,3 +22,9 @@
     </div>
     <div submit-input value="{{contactForm.formDefinition.buttonText}}"></div>
 </form>
+<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true">
+    <p>{{contactForm.succesMessage}}</p>
+</div>
+<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === false">
+    <p>{{contactForm.errorMessage}}</p>
+</div>

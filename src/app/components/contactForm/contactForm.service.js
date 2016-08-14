@@ -44,13 +44,17 @@
          */
         this.submit = function (formId, nonce, data) {
             var postData = postDataFactory.make(formId, nonce, data);
-            return $http({
-                method: 'POST',
-                url: geContactSubmitApiUrl(),
-                data: $httpParamSerializer(postData),
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
+            return $q(function (resolve) {
+                $http({
+                    method: 'POST',
+                    url: geContactSubmitApiUrl(),
+                    data: $httpParamSerializer(postData),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                }).then(function (response) {
+                    resolve(response.data);
+                })
             });
         };
 

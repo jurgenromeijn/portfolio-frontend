@@ -10,11 +10,21 @@
         var formId = $scope.formId;
         var nonce = $window.nonce;
 
+        vm.isSubmitted = false;
+        vm.isSuccessful = false;
+        vm.errorMessage = $scope.errorMessage;
+        vm.succesMessage = '';
         vm.formDefinition = null;
         vm.data = {};
 
         vm.submit = function () {
-            contactFormService.submit(formId, nonce, vm.data);
+            contactFormService.submit(formId, nonce, vm.data).then(function (response) {
+                vm.isSubmitted = true;
+                vm.isSuccessful = response.success;
+                if (vm.isSuccessful) {
+                    vm.succesMessage = response.completion_message;
+                }
+            });
         };
 
         function getFormDefinition(id) {
