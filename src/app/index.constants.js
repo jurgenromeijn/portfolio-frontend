@@ -9,7 +9,7 @@
               projects: 'wp-json/projects/v1/projects',
               contact: {
                   formDefinitions: 'wp-json/ccf/v1/forms',
-                  submit: '?v=1470851965'
+                  submit: '?v='
               }
           }
       });

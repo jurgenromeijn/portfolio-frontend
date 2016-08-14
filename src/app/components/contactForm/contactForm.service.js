@@ -56,7 +56,8 @@
          * @returns {string}
          */
         function geContactSubmitApiUrl() {
-            return [api.baseUrl, api.endpoints.contact.submit].join('/');
+            var timestamp = Math.round(new Date().getTime() / 1000);
+            return [api.baseUrl, '/', api.endpoints.contact.submit, timestamp].join('');
         }
     }
 
