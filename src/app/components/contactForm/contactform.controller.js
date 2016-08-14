@@ -14,7 +14,7 @@
         vm.data = {};
 
         vm.submit = function () {
-            contactFormService.submit(vm.data);
+            contactFormService.submit(vm.formId, vm.nonce, vm.data);
         };
 
         function getFormDefinition(id) {

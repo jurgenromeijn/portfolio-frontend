@@ -12,7 +12,7 @@
      * @param api
      * @constructor
      */
-    function ContactFormService($http, $q, api) {
+    function ContactFormService($http, $q, api, postDataFactory) {
         var formDefinitions = [];
 
         /**
@@ -34,12 +34,15 @@
         };
 
         /**
-         * Submit the contact data.
+         *
+         * @param formId
+         * @param nonce
          * @param data
          * @returns {Promise}
          */
-        this.submit = function (data) {
-            return $http.post(geContactSubmitApiUrl(), data);
+        this.submit = function (formId, nonce, data) {
+            var postData = postDataFactory.make(formId, nonce, data);
+            return $http.post(geContactSubmitApiUrl(), postData);
         };
 
         /**
