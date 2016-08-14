@@ -9,7 +9,7 @@
      * A directive to display a text field. Set rows to 2 or more to get a multi-line field.
      * @returns {{restrict: string, scope: {name: string, label: string, placeholder: string, value: string, rows: string}, templateUrl: string}}
      */
-    function textInput() {
+    function inputText() {
         return {
             restrict: 'A',
             scope: {
@@ -19,9 +19,9 @@
                 placeholder: '@',
                 rows: '@'
             },
-            templateUrl: 'app/components/form/input/text/textInput.tpl.html'
+            templateUrl: 'app/components/form/input/text/inputText.tpl.html'
         }
     }
 
-    angular.module('app.portfolio').directive('textInput', textInput)
+    angular.module('app.portfolio').directive('inputText', inputText)
 })();

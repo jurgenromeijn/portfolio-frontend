@@ -1,26 +1,26 @@
 <form ng-if="contactForm.isSubmitted === false" ng-submit="contactForm.submit()">
     <div ng-repeat="field in contactForm.formDefinition.fields">
         <div ng-if="field.type === 'single-line-text'"
-             text-input
+             input-text
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
              model="contactForm.data[field.slug]"></div>
         <div ng-if="field.type === 'email'"
-             email-input
+             input-email
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
              model="contactForm.data[field.slug]"></div>
         <div ng-if="field.type === 'paragraph-text'"
-             text-input
+             input-text
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
              model="contactForm.data[field.slug]"
              rows="7"></div>
     </div>
-    <div submit-input value="{{contactForm.formDefinition.buttonText}}"></div>
+    <div input-submit value="{{contactForm.formDefinition.buttonText}}"></div>
 </form>
 <div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true">
     <p>{{contactForm.succesMessage}}</p>

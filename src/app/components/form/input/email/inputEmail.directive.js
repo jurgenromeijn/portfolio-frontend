@@ -9,7 +9,7 @@
      * A directive to display an email field.
      * @returns {{restrict: string, scope: {name: string, label: string, placeholder: string, value: string}, templateUrl: string}}
      */
-    function emailInput() {
+    function inputEmail() {
         return {
             restrict: 'A',
             scope: {
@@ -18,9 +18,9 @@
                 model: '=',
                 placeholder: '@'
             },
-            templateUrl: 'app/components/form/input/email/emailInput.tpl.html'
+            templateUrl: 'app/components/form/input/email/inputEmail.tpl.html'
         }
     }
 
-    angular.module('app.portfolio').directive('emailInput', emailInput)
+    angular.module('app.portfolio').directive('inputEmail', inputEmail)
 })();

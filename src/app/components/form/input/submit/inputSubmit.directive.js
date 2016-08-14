@@ -9,15 +9,15 @@
      * A directive to display a submit button.
      * @returns {{restrict: string, scope: {value: string}, templateUrl: string}}
      */
-    function submitInput() {
+    function inputSubmit() {
         return {
             restrict: 'A',
             scope: {
                 value: '@'
             },
-            templateUrl: 'app/components/form/input/submit/submitInput.tpl.html'
+            templateUrl: 'app/components/form/input/submit/inputSubmit.tpl.html'
         }
     }
 
-    angular.module('app.portfolio').directive('submitInput', submitInput)
+    angular.module('app.portfolio').directive('inputSubmit', inputSubmit)
 })();
