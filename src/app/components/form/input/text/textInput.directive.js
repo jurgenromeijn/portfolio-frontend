@@ -15,8 +15,8 @@
             scope: {
                 name: '@',
                 label: '@',
+                model: '=',
                 placeholder: '@',
-                value: '@',
                 rows: '@'
             },
             templateUrl: 'app/components/form/input/text/textInput.tpl.html'

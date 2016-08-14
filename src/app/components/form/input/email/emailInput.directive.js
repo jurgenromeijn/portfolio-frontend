@@ -15,8 +15,8 @@
             scope: {
                 name: '@',
                 label: '@',
-                placeholder: '@',
-                value: '@'
+                model: '=',
+                placeholder: '@'
             },
             templateUrl: 'app/components/form/input/email/emailInput.tpl.html'
         }
