@@ -1,32 +1,32 @@
-<form ng-if="contactForm.isSubmitted === false" ng-submit="contactForm.submit()">
+<form data-ng-if="contactForm.isSubmitted === false" data-ng-submit="contactForm.submit()">
     <div ng-repeat="field in contactForm.formDefinition.fields">
-        <div ng-if="field.type === 'single-line-text'"
-             input-text
+        <div data-ng-if="field.type === 'single-line-text'"
+             data-input-text
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
-             model="contactForm.data[field.slug]"></div>
-        <div ng-if="field.type === 'email'"
-             input-email
+             data-model="contactForm.data[field.slug]"></div>
+        <div data-ng-if="field.type === 'email'"
+             data-input-email
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
-             model="contactForm.data[field.slug]"></div>
-        <div ng-if="field.type === 'paragraph-text'"
-             input-text
+             data-model="contactForm.data[field.slug]"></div>
+        <div data-ng-if="field.type === 'paragraph-text'"
+             data-input-text
              name="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
-             model="contactForm.data[field.slug]"
+             data-model="contactForm.data[field.slug]"
              rows="7"></div>
     </div>
-    <div input-submit value="{{contactForm.formDefinition.buttonText}}"></div>
+    <div data-input-submit data-value="{{contactForm.formDefinition.buttonText}}"></div>
 </form>
-<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true"
+<div data-ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true"
      class="alert alert-success">
     <p>{{contactForm.succesMessage}}</p>
 </div>
-<div ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === false"
+<div data-ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === false"
      class="alert alert-danger">
     <p>{{contactForm.errorMessage}}</p>
 </div>

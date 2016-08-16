@@ -1,23 +1,23 @@
 <section class="container">
-    <img src="{{project.featuredImage.url}}" class="img-responsive">
+    <img data-ng-src="{{project.featuredImage.url}}" class="img-responsive">
     <div class="content-regular">
         <header class="heading">
             <h1>{{project.title}}</h1>
         </header>
         <ol class="breadcrumb">
-            <li><a ui-sref="projects">Projecten</a></li>
+            <li><a data-ui-sref="projects">Projecten</a></li>
             <li class="active">{{project.title}}</li>
         </ol>
         <div class="row project-content">
             <div class="col-sm-8">
-                <p ng-bind-html="project.intro" class="lead"></p>
-                <div ng-bind-html="project.content"></div>
+                <p data-ng-bind-html="project.intro" class="lead"></p>
+                <div data-ng-bind-html="project.content"></div>
             </div>
-            <div ng-bind-html="project.info" class="col-sm-4 project-info"></div>
+            <div data-ng-bind-html="project.info" class="col-sm-4 project-info"></div>
         </div>
         <ul class="list-unstyled row">
-            <li ng-repeat="image in project.images" class="col-md-6 project-image">
-                <img src="{{image.url}}" class="img-responsive">
+            <li data-ng-repeat="image in project.images" class="col-md-6 project-image">
+                <img data-ng-src="{{image.url}}" class="img-responsive">
             </li>
         </ul>
     </div>

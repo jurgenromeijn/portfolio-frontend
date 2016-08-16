@@ -1,9 +1,9 @@
 <div class="project-overview">
     <ul class="list-unstyled row">
-        <li class="col-md-6" ng-repeat="project in controller.projects">
+        <li class="col-md-6" data-ng-repeat="project in controller.projects">
             <a ui-sref="projects-detail({slug: project.slug})">
                 <figure class="project-thumb">
-                    <img src="{{project.featuredImage.sizeVariants.postThumbnail.url}}">
+                    <img data-ng-src="{{project.featuredImage.sizeVariants.postThumbnail.url}}">
                     <figcaption class="project-caption">
                         <div>
                             <div class="heading project-title">

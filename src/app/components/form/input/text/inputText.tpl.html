@@ -1,19 +1,19 @@
 <div class="form-group">
     <label for="{{name}}">{{label}}</label>
-    <input ng-if="rows === undefined || rows <= 1"
+    <input data-ng-if="rows === undefined || rows <= 1"
            required
            type="text"
            class="form-control"
            name="{{name}}"
            id="{{name}}"
-           ng-model="$parent.model"
+           data-ng-model="$parent.model"
            placeholder="{{placeholder}}">
-    <textarea ng-if="rows !== undefined && rows > 1"
+    <textarea data-ng-if="rows !== undefined && rows > 1"
               required
               class="form-control"
               name="{{name}}"
               id="{{name}}"
-              ng-model="$parent.model"
+              data-ng-model="$parent.model"
               placeholder="{{placeholder}}"
               rows="{{rows}}"></textarea>
 </div>
