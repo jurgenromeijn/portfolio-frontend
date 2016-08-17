@@ -13,11 +13,12 @@
         return {
             restrict: 'A',
             scope: {
-                limit: '@'
+                limit: '@',
+                cols: '@'
             },
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
             controller: 'ProjectOverviewController',
-            controllerAs: 'controller'
+            controllerAs: 'projectOverview'
         }
     }
 

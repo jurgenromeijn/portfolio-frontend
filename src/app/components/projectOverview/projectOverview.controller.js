@@ -16,6 +16,7 @@
 
         vm.projects = [];
         vm.limit = $scope.limit;
+        vm.colWidth = Math.ceil(12 / $scope.cols) || 6;
 
         /**
          * Get all projects.
