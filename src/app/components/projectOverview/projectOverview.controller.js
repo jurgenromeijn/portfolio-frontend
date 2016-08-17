@@ -10,10 +10,11 @@
      * @param projectService
      * @constructor
      */
-    function ProjectOverviewController(projectService) {
+    function ProjectOverviewController($scope, projectService) {
         var vm = this;
 
         vm.projects = [];
+        vm.limit = $scope.limit;
 
         /**
          * Get all projects.

@@ -12,6 +12,9 @@
     function projectOverview() {
         return {
             restrict: 'A',
+            scope: {
+                limit: '@'
+            },
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
             controller: 'ProjectOverviewController',
             controllerAs: 'controller'
