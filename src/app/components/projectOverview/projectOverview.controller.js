@@ -7,6 +7,7 @@
 
     /**
      * This controller is used to add all projects to the view model.
+     * @param $scope
      * @param projectService
      * @constructor
      */
