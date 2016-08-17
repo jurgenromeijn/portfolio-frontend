@@ -2,17 +2,13 @@
   white-space: nowrap;
 }
 
-.heading {
-  margin-bottom: 1.67 * $spacing;
-
-  &::after {
-    margin-bottom: 10px;
-    display: block;
-    content: " ";
-    background: $black;
-    height: 1px;
-    width: $spacing;
-  }
+.heading::after {
+  margin: 20px;
+  display: block;
+  content: " ";
+  background: $black;
+  height: 1px;
+  width: $spacing;
 }
 
 p {
