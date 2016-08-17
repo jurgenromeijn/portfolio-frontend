@@ -9,7 +9,7 @@
 $black:                  #000 !default;
 $gray-base:              #000 !default;
 $gray-darker:            #333 !default;
-$gray-dark:              #777 !default;
+$gray-dark:              #555 !default;
 $gray-light:             #e7e7e7 !default;
 $gray-lighter:           #f8f8f8 !default;
 $white:                  #fff !default;
@@ -24,7 +24,7 @@ $brand-danger:          #e74c3c !default;
 //
 //## Settings for some of the most global styles.
 $body-bg:               $white !default;
-$text-color:            $black !default;
+$text-color:            $gray-dark !default;
 $spacing:               30px !default;
 
 //== Typography
