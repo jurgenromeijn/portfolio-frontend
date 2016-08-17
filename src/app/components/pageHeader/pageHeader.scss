@@ -3,15 +3,25 @@ $brand-height: $navbar-height * 0.8;
 .navbar-portfolio {
     border-bottom: none;
 
+    .navbar-header {
+        text-align: center;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        left: 5px;
+    }
+    
     .navbar-brand {
         padding: 0;
+        display: inline-block;
+        float: none;
 
         .name {
             display: none;
         }
 
         &:after {
-            margin-left: $nav-link-spacing-horizontal;
             background-color: $brand-primary;
             color: $white;
             content: "[JR]";
@@ -24,6 +34,59 @@ $brand-height: $navbar-height * 0.8;
                     (($navbar-height - $brand-height) / 2)
                     ((($navbar-height - $brand-height) / 2) + 1px);
             text-align: center;
+
+            @media (min-width: $screen-sm-min) {
+                margin-left: $nav-link-spacing-horizontal;
+            }
+        }
+    }
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+    text-align: center;
+
+    @media (max-width: $screen-xs-max) {
+        background: $gray-light;
+    }
+}
+
+/**
+ * @Source: http://julienmelissas.com/animated-x-icon-for-the-bootstrap-navbar-toggle/
+ */
+.navbar-toggle {
+    border: none;
+    background: transparent !important;
+
+    &:hover {
+        background: transparent !important;
+    }
+
+    .icon-bar {
+        width: 22px;
+        transition: all 0.2s;
+    }
+    .top-bar {
+        transform: rotate(45deg);
+        transform-origin: 10% 10%;
+    }
+    .middle-bar {
+        opacity: 0;
+    }
+    .bottom-bar {
+        transform: rotate(-45deg);
+        transform-origin: 10% 90%;
+    }
+
+    &.collapsed {
+        .top-bar {
+            transform: rotate(0deg);
+        }
+        .middle-bar {
+            opacity: 1;
+        }
+        .bottom-bar {
+            transform: rotate(0deg);
         }
     }
 }

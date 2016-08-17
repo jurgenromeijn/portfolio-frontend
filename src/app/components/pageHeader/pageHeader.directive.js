@@ -7,12 +7,14 @@
 
     /**
      * Show the header of the page.
-     * @returns {{restrict: string, templateUrl: string}}
+     * @returns {{restrict: string, templateUrl: string, controller: string, controllerAs: string}}
      */
     function pageHeader() {
         return {
             restrict: 'A',
-            templateUrl: 'app/components/pageHeader/pageHeader.tpl.html'
+            templateUrl: 'app/components/pageHeader/pageHeader.tpl.html',
+            controller: 'PageHeaderController',
+            controllerAs: 'header'
         };
     }
 
