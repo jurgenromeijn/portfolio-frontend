@@ -14,3 +14,13 @@
     width: $spacing;
   }
 }
+
+p {
+  margin: 0 0 20px;
+
+  &.lead {
+    margin: 0 0 20px;
+    font-size: $font-size-large;
+    line-height: $line-height-base;
+  }
+}
