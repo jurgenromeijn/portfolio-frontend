@@ -30,6 +30,9 @@
             });
         }
 
+        /**
+         * Get all the column widths for the projects.
+         */
         function getCollWidths() {
             if (angular.isDefined($scope.colsLg)) {
                 vm.colWidthLg = calculateColWidth($scope.colsLg);
@@ -45,6 +48,11 @@
             }
         }
 
+        /**
+         * Calculate the width of the column based on the ammount of projects per row.
+         * @param cols
+         * @returns {number}
+         */
         function calculateColWidth(cols) {
             return Math.ceil(12 / cols);
         }
