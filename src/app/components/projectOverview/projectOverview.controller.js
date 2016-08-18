@@ -29,6 +29,7 @@
         function fetchProjects() {
             projectService.getProjects().then(function (projects) {
                 vm.projects = projects;
+                setMoreLink();
             });
         }
 
@@ -57,6 +58,19 @@
          */
         function calculateColWidth(cols) {
             return Math.ceil(12 / cols);
+        }
+
+        /**
+         * Set the attributes related to the more projects link.
+         */
+        function setMoreLink() {
+            if (angular.isDefined($scope.moreLink)
+                && angular.isDefined($scope.moreLinkText)
+                && vm.limit < vm.projects.length) {
+                vm.limit--;
+                vm.moreLink = $scope.moreLink;
+                vm.moreLinkText = $scope.moreLinkText;
+            }
         }
         
         fetchProjects();
