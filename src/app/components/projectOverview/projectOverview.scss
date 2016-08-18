@@ -55,4 +55,23 @@
       top: 0;
     }
   }
+
+  .projects-more-label {
+    background-color: $brand-primary;
+    justify-content: center;
+
+    span {
+      @extend h1;
+      transition: all 0.3s;
+      color: $white !important;
+    }
+
+    &:hover {
+      background-color: $white;
+
+      span {
+        color: $brand-primary !important;
+      }
+    }
+  }
 }
