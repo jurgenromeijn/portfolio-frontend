@@ -1,7 +1,7 @@
 .project-overview {
 }
 
-.project-thumb {
+.project-thumb, .projects-more {
   position: relative;
   margin: 10px 0 $spacing;
 
@@ -9,7 +9,7 @@
     width: 100%;
   }
 
-  .project-caption {
+  .project-caption, .projects-more-label {
     display: flex;
     align-items: center;
     padding: $spacing;

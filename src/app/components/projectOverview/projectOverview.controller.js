@@ -8,10 +8,11 @@
     /**
      * This controller is used to add all projects to the view model.
      * @param $scope
+     * @param $state
      * @param projectService
      * @constructor
      */
-    function ProjectOverviewController($scope, projectService) {
+    function ProjectOverviewController($scope, $state, projectService) {
         var vm = this;
 
         vm.projects = [];
@@ -68,7 +69,7 @@
                 && angular.isDefined($scope.moreLinkText)
                 && vm.limit < vm.projects.length) {
                 vm.limit--;
-                vm.moreLink = $scope.moreLink;
+                vm.moreLink = $state.href($scope.moreLink);
                 vm.moreLinkText = $scope.moreLinkText;
             }
         }

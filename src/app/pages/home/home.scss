@@ -16,11 +16,11 @@
     margin-bottom: 0;
   }
 
-  .project {
+  .project, .projects-more-wrapper {
     padding: 0;
-  }
 
-  .project-thumb {
-    margin: 0;
+    .project-thumb, .projects-more {
+      margin: 0;
+    }
   }
 }
