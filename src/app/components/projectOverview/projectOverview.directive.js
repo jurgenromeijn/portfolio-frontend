@@ -14,7 +14,10 @@
             restrict: 'A',
             scope: {
                 limit: '@',
-                cols: '@'
+                colsLg: '@',
+                colsMd: '@',
+                colsSm: '@',
+                colsXs: '@',
             },
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
             controller: 'ProjectOverviewController',

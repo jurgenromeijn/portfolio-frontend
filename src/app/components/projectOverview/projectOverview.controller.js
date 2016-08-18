@@ -16,7 +16,10 @@
 
         vm.projects = [];
         vm.limit = $scope.limit;
-        vm.colWidth = Math.ceil(12 / $scope.cols) || 6;
+        vm.colWidthLg = 6;
+        vm.colWidthMd = 6;
+        vm.colWidthSm = 6;
+        vm.colWidthXs = 12;
 
         /**
          * Get all projects.
@@ -26,8 +29,28 @@
                 vm.projects = projects;
             });
         }
+
+        function getCollWidths() {
+            if (angular.isDefined($scope.colsLg)) {
+                vm.colWidthLg = calculateColWidth($scope.colsLg);
+            }
+            if (angular.isDefined($scope.colsMd)) {
+                vm.colWidthMd = calculateColWidth($scope.colsMd);
+            }
+            if (angular.isDefined($scope.colsSm)) {
+                vm.colWidthSm = calculateColWidth($scope.colsSm);
+            }
+            if (angular.isDefined($scope.colsXs)) {
+                vm.colWidthXs = calculateColWidth($scope.colsXs);
+            }
+        }
+
+        function calculateColWidth(cols) {
+            return Math.ceil(12 / cols);
+        }
         
         getProjects();
+        getCollWidths();
     }
 
     angular.module('app.portfolio').controller('ProjectOverviewController', ProjectOverviewController);
