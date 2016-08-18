@@ -18,6 +18,8 @@
                 colsMd: '@',
                 colsSm: '@',
                 colsXs: '@',
+                moreLink: '@',
+                moreLinkText: '@'
             },
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
             controller: 'ProjectOverviewController',
