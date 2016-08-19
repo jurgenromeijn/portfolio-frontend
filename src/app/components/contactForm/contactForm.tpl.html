@@ -1,4 +1,6 @@
-<form data-ng-if="contactForm.isSubmitted === false" data-ng-submit="contactForm.submit()">
+<form data-ng-if="contactForm.isSubmitted === false"
+      data-ng-show="contactForm.formDefinition !== null"
+      data-ng-submit="contactForm.submit()">
     <div ng-repeat="field in contactForm.formDefinition.fields">
         <div data-ng-if="field.type === 'single-line-text'"
              data-input-text
