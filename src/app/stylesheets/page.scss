@@ -1,11 +1,18 @@
-html {
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  height: 100%;
-  padding-top: $navbar-height;
   font-weight: $font-weight;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  padding-top: $navbar-height;
+  padding-bottom: 128px;
+  position: relative;
 }
 
 .content-regular {
