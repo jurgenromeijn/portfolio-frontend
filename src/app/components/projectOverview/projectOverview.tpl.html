@@ -4,7 +4,8 @@
             data-ng-repeat="project in projectOverview.projects | limitTo:projectOverview.limit">
             <a data-ui-sref="projects-detail({slug: project.slug})">
                 <figure class="project-thumb">
-                    <img data-ng-src="{{project.featuredImage.sizeVariants.postThumbnail.url}}">
+                    <img data-ng-src="{{project.featuredImage.sizeVariants.postThumbnail.url}}"
+                         alt="{{project.title}}">
                     <figcaption class="project-caption">
                         <div>
                             <div class="heading project-title">
