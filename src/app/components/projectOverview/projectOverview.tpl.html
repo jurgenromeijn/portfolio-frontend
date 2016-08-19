@@ -1,4 +1,4 @@
-<div class="project-overview">
+<div class="project-overview" data-ng-show="projectOverview.projects.length > 0">
     <ul class="list-unstyled row">
         <li class="project col-lg-{{projectOverview.colWidthLg}} col-md-{{projectOverview.colWidthMd}} col-sm-{{projectOverview.colWidthSm}} col-xs-{{projectOverview.colWidthXs}}"
             data-ng-repeat="project in projectOverview.projects | limitTo:projectOverview.limit">
