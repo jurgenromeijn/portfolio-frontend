@@ -12,9 +12,18 @@
     function projectOverview() {
         return {
             restrict: 'A',
+            scope: {
+                limit: '@',
+                colsLg: '@',
+                colsMd: '@',
+                colsSm: '@',
+                colsXs: '@',
+                moreLink: '@',
+                moreLinkText: '@'
+            },
             templateUrl: 'app/components/projectOverview/projectOverview.tpl.html',
             controller: 'ProjectOverviewController',
-            controllerAs: 'controller'
+            controllerAs: 'projectOverview'
         }
     }
 

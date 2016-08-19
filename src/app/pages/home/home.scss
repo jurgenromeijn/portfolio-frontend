@@ -10,3 +10,17 @@
     content: "";
   }
 }
+
+.project-overview-home {
+  .list-unstyled {
+    margin-bottom: 0;
+  }
+
+  .project, .projects-more-wrapper {
+    padding: 0;
+
+    .project-thumb, .projects-more {
+      margin: 0;
+    }
+  }
+}

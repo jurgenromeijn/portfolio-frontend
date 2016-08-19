@@ -1,20 +1,20 @@
 .project-overview {
 }
 
-.project-thumb {
+.project-thumb, .projects-more {
   position: relative;
-  margin-bottom: $spacing;
+  margin: 10px 0 $spacing;
 
   img {
     width: 100%;
   }
 
-  .project-caption {
+  .project-caption, .projects-more-label {
     display: flex;
     align-items: center;
     padding: $spacing;
 
-    color: $black !important;
+    color: $text-color !important;
     background-color: transparent;
 
     position: absolute;
@@ -54,11 +54,24 @@
       opacity: 1;
       top: 0;
     }
+  }
 
-    hr {
-      color: $black !important;
-      border: 1px solid $black;
-      width: 20px;
+  .projects-more-label {
+    background-color: $brand-primary;
+    justify-content: center;
+
+    span {
+      @extend h1;
+      transition: all 0.3s;
+      color: $white !important;
+    }
+
+    &:hover {
+      background-color: $white;
+
+      span {
+        color: $brand-primary !important;
+      }
     }
   }
 }

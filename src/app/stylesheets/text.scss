@@ -2,15 +2,21 @@
   white-space: nowrap;
 }
 
-.heading {
-  margin-bottom: 1.67 * $spacing;
+.heading::after {
+  margin: 20px 0;
+  display: block;
+  content: " ";
+  background: $text-color;
+  height: 1px;
+  width: $spacing;
+}
 
-  &::after {
-    margin-bottom: 10px;
-    display: block;
-    content: " ";
-    background: $black;
-    height: 1px;
-    width: $spacing;
+p {
+  margin: 0 0 20px;
+
+  &.lead {
+    margin: 0 0 20px;
+    font-size: $font-size-large;
+    line-height: $line-height-base;
   }
 }
