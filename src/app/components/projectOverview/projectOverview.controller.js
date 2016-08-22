@@ -15,6 +15,7 @@
     function ProjectOverviewController($scope, $state, projectService) {
         var vm = this;
 
+        vm.loading = false;
         vm.projects = [];
         vm.limit = $scope.limit;
         vm.colWidthLg = 6;
@@ -28,8 +29,10 @@
          * Fetch all projects.
          */
         function fetchProjects() {
+            vm.loading = true;
             projectService.getProjects().then(function (projects) {
                 vm.projects = projects;
+                vm.loading = false;
                 setMoreLink();
             });
         }
