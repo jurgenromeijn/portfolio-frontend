@@ -1,12 +1,10 @@
 .loading {
-  position: relative;
   opacity: 0;
-  top: $spacing;
+  transform: translate3d(0, $spacing, 0);
 }
 
 .loading-finished {
-  position: relative;
   opacity: 1;
-  top: 0;
+  transform: translate3d(0, 0, 0);
   transition: all 0.5s;
 }
