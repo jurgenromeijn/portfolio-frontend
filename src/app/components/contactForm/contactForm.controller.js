@@ -17,6 +17,7 @@
         var formId = $scope.formId;
         var nonce = $window.nonce;
 
+        vm.isLoading = false;
         vm.isSubmitted = false;
         vm.isSuccessful = false;
         vm.errorMessage = $scope.errorMessage;
@@ -42,8 +43,10 @@
          * @param id
          */
         function getFormDefinition(id) {
+            vm.isLoading = true;
             contactFormService.getFormDefinition(id).then(function (formDefinition) {
                 vm.formDefinition = formDefinition;
+                vm.isLoading = false;
             });
         }
 

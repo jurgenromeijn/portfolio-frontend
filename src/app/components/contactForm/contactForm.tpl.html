@@ -1,6 +1,7 @@
 <form data-ng-if="contactForm.isSubmitted === false"
       data-ng-show="contactForm.formDefinition !== null"
-      data-ng-submit="contactForm.submit()">
+      data-ng-submit="contactForm.submit()"
+      data-ng-class="{'loading': contactForm.isLoading, 'loading-finished': !contactForm.isLoading}">
     <div ng-repeat="field in contactForm.formDefinition.fields">
         <div data-ng-if="field.type === 'single-line-text'"
              data-input-text
@@ -22,7 +23,7 @@
              data-model="contactForm.data[field.slug]"
              rows="7"></div>
     </div>
-    <div data-input-submit data-value="{{contactForm.formDefinition.buttonText}}"></div>
+    <div ng-show="contactForm.formDefinition.buttonText" data-input-submit data-value="{{contactForm.formDefinition.buttonText}}"></div>
 </form>
 <div data-ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true"
      class="alert alert-success">
