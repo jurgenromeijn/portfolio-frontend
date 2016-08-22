@@ -15,6 +15,7 @@
     function ProjectController($stateParams, $sce, projectService) {
         var vm = this;
 
+        vm.loading = false;
         vm.title = '';
         vm.intro = '';
         vm.content = '';
@@ -27,6 +28,7 @@
          * @param slug
          */
         function getProject(slug) {
+            vm.loading = true;
             projectService.getProject(slug).then(function (project) {
                 vm.title = project.title;
                 vm.intro = $sce.trustAsHtml(project.intro);
@@ -34,6 +36,7 @@
                 vm.info = $sce.trustAsHtml(project.info);
                 vm.featuredImage = project.featuredImage;
                 vm.images = project.images;
+                vm.loading = false;
             });
         }
         
