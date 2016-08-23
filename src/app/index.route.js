@@ -6,9 +6,9 @@
         .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider) {
+    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider, $uiViewScrollProvider) {
         var $window = $windowProvider.$get();
-        
+
         $stateProvider
             .state('home', {
                 url: '/',
@@ -24,16 +24,20 @@
                 controllerAs: 'project',
                 templateUrl: 'app/pages/project/detail/projectDetail.tpl.html'
             })
+            .state('about', {
+                url: '/about',
+                templateUrl: 'app/pages/about/about.tpl.html'
+            })
             .state('contact', {
                 url: '/contact',
                 templateUrl: 'app/pages/contact/contact.tpl.html'
-            })
-        ;
+            });
 
         if($window.history && $window.history.pushState){
             $locationProvider.html5Mode(true);
         }
 
+        $uiViewScrollProvider.useAnchorScroll()
         $urlRouterProvider.otherwise('/');
     }
 
