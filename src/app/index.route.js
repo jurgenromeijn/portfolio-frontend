@@ -6,9 +6,9 @@
         .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider) {
+    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider, $uiViewScrollProvider) {
         var $window = $windowProvider.$get();
-        
+
         $stateProvider
             .state('home', {
                 url: '/',
@@ -37,6 +37,7 @@
             $locationProvider.html5Mode(true);
         }
 
+        $uiViewScrollProvider.useAnchorScroll()
         $urlRouterProvider.otherwise('/');
     }
 
