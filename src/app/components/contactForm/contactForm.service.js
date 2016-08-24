@@ -64,7 +64,7 @@
          * @returns {string}
          */
         function getFormDefinitionApiUrl(id) {
-            return [api.baseUrl, api.endpoints.contact.formDefinitions, id].join('/');
+            return [api.contact.formDefinitions, id].join('/');
         }
 
         /**
@@ -73,7 +73,7 @@
          */
         function geContactSubmitApiUrl() {
             var timestamp = Math.round(new Date().getTime() / 1000);
-            return [api.baseUrl, '/', api.endpoints.contact.submit, timestamp].join('');
+            return [api.contact.submit, timestamp].join('');
         }
     }
 
