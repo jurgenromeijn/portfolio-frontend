@@ -1,0 +1,137 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+$black:                  #000 !default;
+$gray-base:              #000 !default;
+$gray-darker:            #333 !default;
+$gray-dark:              #555 !default;
+$gray-light:             #e7e7e7 !default;
+$gray-lighter:           #f8f8f8 !default;
+$white:                  #fff !default;
+
+$brand-primary:         #057C6D !default;
+$brand-success:         #1abc9c !default;
+$brand-info:            #3498db !default;
+$brand-warning:         #f39c12 !default;
+$brand-danger:          #e74c3c !default;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+$body-bg:               $white !default;
+$text-color:            $gray-dark !default;
+$spacing:               30px !default;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-accent:      "Pixelade", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$headings-font-family:    $font-family-accent !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.25 !default;
+$headings-color:          inherit !default;
+
+$font-size-base:          15px !default;
+$font-size-large:         18px !default;
+$font-size-small:         12px !default;
+$line-height-base:        1.6 !default;
+
+$font-size-h1:            floor(($font-size-base * 1.6)) !default; // ~24px
+$font-size-h2:            floor(($font-size-base * 1.6)) !default; // ~24px
+$font-size-h3:            floor(($font-size-base * 1.6)) !default; // ~24px
+
+$font-weight:             300;
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+$border-radius-base:        0 !default;
+$border-radius-large:       0 !default;
+$border-radius-small:       0 !default;
+
+//== Navbar
+//
+//##
+$nav-link-spacing-vertical:                10px !default;
+$nav-link-spacing-horizontal:              15px !default;
+
+$navbar-default-link-color:                $gray-dark !default;
+$navbar-default-link-hover-color:          $black !default;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         $brand-primary !default;
+$navbar-default-link-active-bg:            transparent !default;
+
+$navbar-default-toggle-hover-bg:           transparent !default;
+$navbar-default-toggle-icon-bar-bg:        $gray-dark !default;
+$navbar-default-toggle-border-color:       transparent !default;
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+$alert-success-border:        transparent !default;
+$alert-danger-border:         transparent !default;
+
+//== Breadcrumbs
+//
+//##
+$breadcrumb-padding-vertical:     0;
+$breadcrumb-padding-horizontal:   0;
+$breadcrumb-bg:                   transparent;
+$breadcrumb-color:                $black;
+$breadcrumb-active-color:         $black;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+$btn-primary-border:             transparent !default;
+
+//== Forms
+//
+//##
+$input-bg:                       $gray-lighter !default;
+$input-color:                    $gray-darker !default;
+$input-border:                   transparent !default;
+
+$form-group-margin-bottom:       20px !default;
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

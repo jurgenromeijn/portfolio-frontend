@@ -1,0 +1,75 @@
+.project-overview {
+}
+
+.project-thumb, .projects-more {
+  position: relative;
+  margin: 10px 0 $spacing;
+
+  img {
+    width: 100%;
+  }
+
+  .project-caption, .projects-more-label {
+    display: flex;
+    align-items: center;
+    padding: $spacing;
+
+    color: $text-color !important;
+    background-color: transparent;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    transition: background-color 0.3s;
+
+    .project-title {
+      margin-bottom: 10px;
+
+      transform: translate3d(0, $spacing, 0);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .project-excerpt {
+      transform: translate3d(0, $spacing, 0);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover .project-caption {
+    background-color: rgba(255, 255, 255, 0.9);
+
+    .project-title {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .project-excerpt {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .projects-more-label {
+    background-color: $brand-primary;
+    justify-content: center;
+
+    span {
+      @extend h1;
+      transition: all 0.3s;
+      color: $white !important;
+    }
+
+    &:hover {
+      background-color: $white;
+
+      span {
+        color: $brand-primary !important;
+      }
+    }
+  }
+}

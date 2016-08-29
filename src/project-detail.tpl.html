@@ -1,0 +1,25 @@
+<section class="container"
+         data-ng-class="{'loading': project.isLoading, 'loading-finished': !project.isLoading}">
+    <img data-ng-src="{{project.featuredImage.url}}" class="img-responsive">
+    <div class="content-regular">
+        <header class="heading">
+            <h1>{{project.title}}</h1>
+        </header>
+        <ol class="breadcrumb">
+            <li><a data-ui-sref="projects">Projecten</a></li>
+            <li class="active">{{project.title}}</li>
+        </ol>
+        <div class="row project-content">
+            <div class="col-sm-8">
+                <p data-ng-bind-html="project.intro" class="lead"></p>
+                <div data-ng-bind-html="project.content"></div>
+            </div>
+            <div data-ng-bind-html="project.info" class="col-sm-4 project-info"></div>
+        </div>
+        <ul class="list-unstyled row">
+            <li data-ng-repeat="image in project.images" class="col-md-6 project-image">
+                <img data-ng-src="{{image.url}}" class="img-responsive">
+            </li>
+        </ul>
+    </div>
+</section>

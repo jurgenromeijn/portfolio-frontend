@@ -1,0 +1,16 @@
+.page-footer {
+  background: $gray-lighter;
+  color: $gray-dark;
+  font-family: Pixelade;
+  text-transform: uppercase;
+  padding: $spacing 0 ($spacing - ($line-height-computed / 2));
+  height: 128px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .social a {
+    color: $gray-dark;
+  }
+}

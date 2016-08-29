@@ -1,0 +1,34 @@
+<div class="project-overview"
+     data-ng-show="projectOverview.projects.length > 0"
+     data-ng-class="{'loading': projectOverview.isLoading, 'loading-finished': !projectOverview.isLoading}">
+    <ul class="list-unstyled row">
+        <li class="project col-lg-{{projectOverview.colWidthLg}} col-md-{{projectOverview.colWidthMd}} col-sm-{{projectOverview.colWidthSm}} col-xs-{{projectOverview.colWidthXs}}"
+            data-ng-repeat="project in projectOverview.projects | limitTo:projectOverview.limit">
+            <a data-ui-sref="projects-detail({slug: project.slug})">
+                <figure class="project-thumb">
+                    <img data-ng-src="{{project.featuredImage.sizeVariants.postThumbnail.url}}"
+                         alt="{{project.title}}">
+                    <figcaption class="project-caption">
+                        <div>
+                            <div class="heading project-title">
+                                <h3>{{project.title}}</h3>
+                            </div>
+                            <p class="project-excerpt">{{project.excerpt}}</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+        <li class="projects-more-wrapper col-lg-{{projectOverview.colWidthLg}} col-md-{{projectOverview.colWidthMd}} col-sm-{{projectOverview.colWidthSm}} col-xs-{{projectOverview.colWidthXs}}"
+            data-ng-if="projectOverview.limit">
+            <a data-ng-href="{{projectOverview.moreLink}}">
+                <figure class="projects-more">
+                    <img data-ng-src="{{projectOverview.projects[projectOverview.limit].featuredImage.sizeVariants.postThumbnail.url}}">
+                    <figcaption class="projects-more-label">
+                        <span>{{projectOverview.moreLinkText}}</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+    </ul>
+</div>
