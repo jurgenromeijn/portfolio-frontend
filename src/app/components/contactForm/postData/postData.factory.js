@@ -10,7 +10,7 @@
      * @returns {{make: make}}
      */
     function postDataFactory() {
-        return  {
+        return {
             /**
              * Create the post data for a contact form.
              * @param formId

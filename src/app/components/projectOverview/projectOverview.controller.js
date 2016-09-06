@@ -76,7 +76,7 @@
                 vm.moreLinkText = $scope.moreLinkText;
             }
         }
-        
+
         fetchProjects();
         setCollWidths();
     }

@@ -15,5 +15,6 @@
             templateUrl: 'app/components/pageFooter/pageFooter.tpl.html'
         }
     }
+
     angular.module('app.portfolio').directive('pageFooter', pageFooter)
 })();
