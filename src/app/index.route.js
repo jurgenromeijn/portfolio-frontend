@@ -6,7 +6,11 @@
         .config(routerConfig);
 
     /** @ngInject */
-    function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, $windowProvider, $uiViewScrollProvider) {
+    function routerConfig($stateProvider,
+                          $urlRouterProvider,
+                          $locationProvider,
+                          $windowProvider,
+                          $uiViewScrollProvider) {
         var $window = $windowProvider.$get();
 
         $stateProvider
@@ -22,7 +26,12 @@
                 url: '/projecten/{slug}',
                 controller: 'ProjectController',
                 controllerAs: 'project',
-                templateUrl: 'page-project-detail.tpl.html'
+                templateUrl: 'page-project-detail.tpl.html',
+                resolve: {
+                    project: function ($stateParams, projectService) {
+                        return projectService.getProject($stateParams.slug)
+                    }
+                }
             })
             .state('about', {
                 url: '/about',
