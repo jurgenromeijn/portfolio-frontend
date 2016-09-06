@@ -13,7 +13,7 @@
         return {
             restrict: 'A',
             scope: {
-                limit: '@',
+                limit: '@projectOverview',
                 colsLg: '@',
                 colsMd: '@',
                 colsSm: '@',
