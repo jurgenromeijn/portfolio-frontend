@@ -1,11 +1,14 @@
 (function () {
     'use strict';
 
-    angular
-        .module('app.portfolio')
-        .config(routerConfig);
-
-    /** @ngInject */
+    /**
+     * Set up all routing.
+     * @param $stateProvider
+     * @param $urlRouterProvider
+     * @param $locationProvider
+     * @param $windowProvider
+     * @param $uiViewScrollProvider
+     */
     function routerConfig($stateProvider,
                           $urlRouterProvider,
                           $locationProvider,
@@ -50,4 +53,7 @@
         $urlRouterProvider.otherwise('/');
     }
 
+    angular
+        .module('app.portfolio')
+        .config(routerConfig);
 })();

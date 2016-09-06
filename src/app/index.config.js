@@ -1,14 +1,13 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('app.portfolio')
-    .config(config);
+    /**
+     * Add all config.
+     */
+    function config() {
+    }
 
-  /** @ngInject */
-  function config($logProvider) {
-    // Enable log
-    $logProvider.debugEnabled(true);
-  }
-
+    angular
+        .module('app.portfolio')
+        .config(config);
 })();
