@@ -13,7 +13,7 @@
         return {
             restrict: 'A',
             scope: {
-                value: '@'
+                text: '@inputSubmit'
             },
             templateUrl: 'app/components/form/input/submit/inputSubmit.tpl.html'
         }

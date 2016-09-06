@@ -4,28 +4,24 @@
       data-ng-class="{'loading': contactForm.isLoading, 'loading-finished': !contactForm.isLoading}">
     <div ng-repeat="field in contactForm.formDefinition.fields">
         <div data-ng-if="field.type === 'single-line-text'"
-             data-input-text=""
-             name="{{field.slug}}"
+             data-input-text="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
              data-model="contactForm.data[field.slug]"></div>
         <div data-ng-if="field.type === 'email'"
-             data-input-email=""
-             name="{{field.slug}}"
+             data-input-email="{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
              data-model="contactForm.data[field.slug]"></div>
         <div data-ng-if="field.type === 'paragraph-text'"
-             data-input-text=""
-             name="{{field.slug}}"
+             data-input-text="{{field.slug}}"
              label="{{field.label}}"
              placeholder="{{field.placeholder}}"
              data-model="contactForm.data[field.slug]"
              rows="7"></div>
     </div>
     <div ng-show="contactForm.formDefinition.buttonText"
-         data-input-submit=""
-         data-value="{{contactForm.formDefinition.buttonText}}"></div>
+         data-input-submit="{{contactForm.formDefinition.buttonText}}"></div>
 </form>
 <div data-ng-if="contactForm.isSubmitted === true && contactForm.isSuccessful === true"
      class="alert alert-success">
