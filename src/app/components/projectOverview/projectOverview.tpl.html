@@ -1,5 +1,6 @@
 <div class="project-overview"
-     data-ng-show="projectOverview.projects.length > 0">
+     data-ng-show="projectOverview.projects.length > 0"
+     data-ng-class="{'loading': projectOverview.isLoading, 'loading-finished': !projectOverview.isLoading}">
     <ul class="list-unstyled row">
         <li class="project col-lg-{{projectOverview.colWidthLg}} col-md-{{projectOverview.colWidthMd}} col-sm-{{projectOverview.colWidthSm}} col-xs-{{projectOverview.colWidthXs}}"
             data-ng-repeat="project in projectOverview.projects | limitTo:projectOverview.limit">
