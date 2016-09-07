@@ -19,5 +19,6 @@
             templateUrl: 'app/components/bannerText/bannerText.tpl.html'
         };
     }
+
     angular.module('app.portfolio').directive('bannerText', bannerText);
 })();

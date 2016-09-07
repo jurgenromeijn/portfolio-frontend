@@ -11,7 +11,7 @@
             controller: 'ContactFormController',
             controllerAs: 'contactForm',
             scope: {
-                formId: '@',
+                formId: '@contactForm',
                 errorMessage: '@'
             },
             templateUrl: 'app/components/contactForm/contactForm.tpl.html'

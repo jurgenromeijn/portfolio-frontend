@@ -13,7 +13,7 @@
         return {
             restrict: 'A',
             scope: {
-                name: '@',
+                name: '@inputEmail',
                 label: '@',
                 model: '=',
                 placeholder: '@'

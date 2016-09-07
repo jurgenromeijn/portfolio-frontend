@@ -14,8 +14,6 @@ gulp.task('partials', function () {
     path.join(conf.paths.tmp, '/serve/app/components/**/*.html')
   ])
     .pipe($.htmlmin({
-      removeEmptyAttributes: true,
-      removeAttributeQuotes: true,
       collapseBooleanAttributes: true,
       collapseWhitespace: true
     }))
@@ -58,8 +56,6 @@ gulp.task('html', ['inject', 'partials'], function () {
     // .pipe($.revReplace())
     .pipe(htmlFilter)
     .pipe($.htmlmin({
-      removeEmptyAttributes: true,
-      removeAttributeQuotes: true,
       collapseBooleanAttributes: true,
       collapseWhitespace: true
     }))

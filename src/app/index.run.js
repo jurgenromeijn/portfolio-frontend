@@ -1,13 +1,16 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('app.portfolio')
-    .run(runBlock);
+    /**
+     * Sets up components that are not bound to other components.
+     * @param pageService
+     * @param title
+     */
+    function runBlock(pageService, title) {
+        pageService.setTitle(title.home);
+    }
 
-  /** @ngInject */
-  function runBlock($log) {
-    $log.debug('runBlock end');
-  }
-
+    angular
+        .module('app.portfolio')
+        .run(runBlock);
 })();
