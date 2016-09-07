@@ -2,11 +2,12 @@
     'use strict';
 
     /**
-     * Create all logic that needs to run all the time.
-     * @param $log
+     * Sets up components that are not bound to other components.
+     * @param pageService
+     * @param title
      */
-    function runBlock($log) {
-        $log.debug('runBlock end');
+    function runBlock(pageService, title) {
+        pageService.setTitle(title.home);
     }
 
     angular

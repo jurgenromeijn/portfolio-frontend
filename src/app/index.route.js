@@ -19,11 +19,19 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'page-home.tpl.html'
+                templateUrl: 'page-home.tpl.html',
+                controller: function (pageService, title) {
+                    pageService.setTitle(title.home);
+                },
+                controllerAs: 'controller'
             })
             .state('projects', {
                 url: '/projecten',
-                templateUrl: 'page-project-overview.tpl.html'
+                templateUrl: 'page-project-overview.tpl.html',
+                controller: function (pageService, title) {
+                    pageService.setTitle(title.projects);
+                },
+                controllerAs: 'controller'
             })
             .state('projects-detail', {
                 url: '/projecten/{slug}',
@@ -38,11 +46,19 @@
             })
             .state('about', {
                 url: '/about',
-                templateUrl: 'page-about.tpl.html'
+                templateUrl: 'page-about.tpl.html',
+                controller: function (pageService, title) {
+                    pageService.setTitle(title.about);
+                },
+                controllerAs: 'controller'
             })
             .state('contact', {
                 url: '/contact',
-                templateUrl: 'page-contact.tpl.html'
+                templateUrl: 'page-contact.tpl.html',
+                controller: function (pageService, title) {
+                    pageService.setTitle(title.contact);
+                },
+                controllerAs: 'controller'
             });
 
         if($window.history && $window.history.pushState){

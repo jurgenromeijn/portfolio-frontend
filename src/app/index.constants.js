@@ -12,5 +12,12 @@
                 formDefinitions: '/wp-json/ccf/v1/forms',
                 submit: '/?v='
             }
+        })
+        .constant('title', {
+            home: 'Jurgen Romeijn | Full stack e-commerce developer',
+            projects: 'Projecten | Jurgen Romeijn',
+            project: ' | Projecten | Jurgen Romeijn',
+            about: 'Over mij | Jurgen Romeijn',
+            contact: 'Contact | Jurgen Romeijn'
         });
 })();
