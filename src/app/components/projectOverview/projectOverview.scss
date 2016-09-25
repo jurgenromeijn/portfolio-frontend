@@ -40,20 +40,6 @@
     }
   }
 
-  &:hover .project-caption {
-    background-color: rgba(255, 255, 255, 0.9);
-
-    .project-title {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-
-    .project-excerpt {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
   .projects-more-label {
     background-color: $brand-primary;
     justify-content: center;
@@ -64,11 +50,29 @@
       color: $white !important;
     }
 
-    &:hover {
-      background-color: $white;
+    @media (min-width: $screen-sm-min) {
+      &:hover {
+        background-color: $white;
 
-      span {
-        color: $brand-primary !important;
+        span {
+          color: $brand-primary !important;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    &:hover .project-caption {
+      background-color: rgba(255, 255, 255, 0.9);
+
+      .project-title {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .project-excerpt {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
       }
     }
   }
