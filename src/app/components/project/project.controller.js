@@ -10,10 +10,11 @@
      * @param $sce
      * @param project
      * @param pageService
+     * @param projectImageService
      * @param title
      * @constructor
      */
-    function ProjectController($sce, project, pageService, title) {
+    function ProjectController($sce, project, pageService, projectImageService, title) {
         var vm = this;
 
         vm.title = project.title;
@@ -21,7 +22,7 @@
         vm.content = $sce.trustAsHtml(project.content);
         vm.info = $sce.trustAsHtml(project.info);
         vm.featuredImage = project.featuredImage;
-        vm.images = project.images;
+        vm.images = projectImageService.getImagesWithoutFeaturedImage(project);
 
         pageService.setTitle([project.title, title.project].join(''));
     }
